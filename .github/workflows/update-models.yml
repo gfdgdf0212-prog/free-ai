@@ -1,8 +1,8 @@
 name: Update AI Models
 
 on:
-  schedule:
-    - cron: '0 */12 * * *'
+  # schedule:
+  #   - cron: '0 */12 * * *'   # выключено, чтобы робот не работал впустую. Раскомментировать обе строки, когда включите AUTO_PROVIDERS в скрипте.
   workflow_dispatch:
 
 permissions:
@@ -34,8 +34,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add models.json
           if git diff --staged --quiet; then
-            echo "Изменений в models.json нет, коммит не нужен."
+            echo "Изменений нет — ваши модели нетронуты."
           else
-            git commit -m "Auto-update: актуализация списка бесплатных моделей"
-            git push || { echo "PUSH FAILED: проверьте Workflow permissions в настройках репозитория (должно быть Read and write)."; exit 1; }
+            git commit -m "Auto-update models"
+            git push
           fi
