@@ -49,9 +49,9 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .ico svg{width:22px;height:22px}
 .topbar h1{font-family:var(--disp);font-weight:700;font-size:clamp(20px,3vw,28px);line-height:1.15;letter-spacing:-.3px}
 .tb-sub{color:var(--mut);font-size:13px;margin-top:3px}
-.tb-right{text-align:right;font-family:var(--mono)}
-.tb-right b{display:block;font-family:var(--disp);font-weight:700;font-size:24px;color:var(--teal);line-height:1}
-.tb-right span{font-size:10.5px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.tb-right{text-align:right}
+.tb-right b{display:block;font-family:var(--body);font-weight:700;font-size:26px;color:var(--teal);line-height:1}
+.tb-right span{display:block;font-family:var(--body);font-size:12px;color:var(--dim);margin-top:2px}
 
 .toolbar{position:sticky;top:0;z-index:20;background:rgba(6,10,19,.93);backdrop-filter:blur(10px);
   border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:24px;
@@ -89,37 +89,49 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .clearbtn.show{display:inline-block}
 .clearbtn:hover{background:rgba(255,180,84,.12)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-items:start}
 .card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;gap:8px;
   background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--pc);
   border-radius:12px;padding:14px 16px;cursor:pointer;
-  transition:opacity .5s,transform .3s,border-color .25s,box-shadow .25s}
+  transition:transform .3s,border-color .25s,box-shadow .25s}
 .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--pc) 55%,var(--line));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--pc) 30%,transparent)}
+.card.active{border-color:color-mix(in srgb,var(--pc) 60%,var(--line));box-shadow:0 14px 34px -14px color-mix(in srgb,var(--pc) 35%,transparent)}
 .card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .prov{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--pc);text-transform:uppercase}
 .prov i{width:7px;height:7px;border-radius:50%;background:var(--pc);box-shadow:0 0 6px var(--pc)}
 .cat{font-size:10px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:2px 7px;white-space:nowrap}
 .card h3{font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .hot{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:1px;color:#0a0f1a;background:linear-gradient(90deg,var(--amber),#ff8f5e);border-radius:3px;padding:2px 6px;text-transform:uppercase}
-.free-badge{font-size:11px;color:var(--teal);font-weight:600;display:flex;align-items:center;gap:5px}
-.free-badge::before{content:'🎁';font-size:12px}
+.free-badge{font-size:11px;color:var(--teal);font-weight:600;display:flex;align-items:center;gap:6px}
+.free-badge::before{content:'';width:6px;height:6px;border-radius:2px;background:var(--teal);box-shadow:0 0 6px var(--teal);flex:none}
 .card-hint{font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:auto;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px}
 .card-hint span{transition:transform .2s}
 .card:hover .card-hint span{transform:translateX(3px)}
+.card.active .card-hint span{transform:rotate(90deg)}
 
-.details{margin-top:14px;padding-top:12px;border-top:1px solid var(--line2);color:var(--mut);font-size:13px}
-.details .modal-desc{margin-bottom:12px}
-.details .modal-free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:12px;padding:14px;margin-bottom:12px}
-.details .modal-free b{color:var(--teal);display:block;margin-bottom:6px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
-.details .modal-free p{color:#c9f5ea;font-size:13px;line-height:1.5}
-.details .modal-links{display:flex;gap:12px;flex-wrap:wrap}
+.details{display:none;margin-top:14px;padding-top:12px;border-top:1px solid var(--line2);color:var(--mut);font-size:13px;cursor:default}
+.details.open{display:block;animation:fadeDown .3s ease}
+.details .d-desc{margin-bottom:12px;line-height:1.5}
+.details .d-free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:12px;padding:14px;margin-bottom:12px}
+.details .d-free b{color:var(--teal);display:block;margin-bottom:6px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-family:var(--mono)}
+.details .d-free p{color:#c9f5ea;font-size:13px;line-height:1.5}
+.details .d-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.details .d-tags span{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:6px;border:1px solid var(--line)}
+.details .d-links{display:flex;gap:10px;flex-wrap:wrap}
 .details .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:600;border-radius:10px;padding:9px 16px;transition:.2s}
-.details .btn .arr{transition:transform .2s;font-size:14px}
+.details .btn .arr{transition:transform .2s;font-size:13px}
 .details .btn:hover .arr{transform:translate(2px,-2px)}
 .details .btn.main{background:color-mix(in srgb,var(--pc) 20%,var(--panel));border:1px solid color-mix(in srgb,var(--pc) 60%,transparent);color:var(--txt)}
 .details .btn.main:hover{background:color-mix(in srgb,var(--pc) 35%,var(--panel));transform:translateY(-2px)}
 .details .btn.ghost{border:1px solid var(--line);color:var(--mut)}
 .details .btn.ghost:hover{border-color:var(--line2);color:var(--txt);transform:translateY(-2px)}
+
+.m-ru{color:#57d9a3;border-color:rgba(87,217,163,.4)}
+.m-vpn{color:var(--amber);border-color:rgba(255,180,84,.4)}
+.m-free{color:var(--teal);border-color:rgba(53,224,194,.4)}
+.m-limited{color:#ffcf8a;border-color:rgba(255,180,84,.32)}
+.m-local{color:var(--blue);border-color:rgba(102,157,246,.4)}
+.m-online{color:var(--mut);border-color:var(--line2)}
 
 .empty{display:none;text-align:center;padding:70px 20px;border:1px dashed var(--line2);border-radius:16px;color:var(--mut)}
 .empty.show{display:block}
@@ -148,8 +160,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .chips::-webkit-scrollbar{display:none}
   .chip{flex:none}
   .chips-label{min-width:auto;flex:none}
-  .sort{width:100%;justify-content:space-between}
-  .sort select{flex:1}
   .foot-in{grid-template-columns:1fr;gap:26px}
 }
 @media (max-width:640px){
@@ -158,8 +168,8 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .tb-right{display:none}
   .topbar{padding-top:24px}
   .grid{grid-template-columns:1fr}
-  .details .modal-links{flex-direction:column}
-  .details .btn{width:100%}
+  .details .d-links{flex-direction:column}
+  .details .btn{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -177,7 +187,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
         <p class="tb-sub">Справочник моделей с прямыми ссылками и условиями доступа</p>
       </div>
     </div>
-    <div class="tb-right"><b id="totalModels">0</b><span>моделей</span></div>
+    <div class="tb-right"><b id="totalModels">0</b><span id="totalModelsWord">моделей</span></div>
   </header>
 
   <section class="toolbar reveal" id="toolbar">
@@ -188,7 +198,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
         <kbd>/</kbd>
       </label>
       <button class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersBody">
-        <span id="filtersLabel">Фильтры</span><span class="cnt" id="filtersCnt">0</span><span class="chev">▼</span>
+        <span id="filtersLabel">Фильтры</span><span class="cnt" id="filtersCnt">0</span><span class="chev">&#9660;</span>
       </button>
     </div>
     <div class="filters-body" id="filtersBody">
@@ -247,7 +257,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
       <p>Лимиты бесплатных тарифов и доступность из вашего региона меняются без предупреждения — финальные условия всегда на официальном сайте провайдера.</p>
     </div>
   </div>
-  <div class="foot-bottom">© 2026 · данные носят справочный характер · <b id="footModels">0</b> модели</div>
+  <div class="foot-bottom">© 2026 · данные носят справочный характер · <b id="footModels">0</b> <span id="footModelsWord">моделей</span></div>
 </footer>
 
 <script>
@@ -259,20 +269,17 @@ const PC = {
   'Black Forest Labs':'#ff6b9d','Stability AI':'#9a7bff','Ideogram':'#ff3d81','Leonardo AI':'#c084fc',
   'Krea':'#2dd4bf','Kuaishou':'#4cc2ff','Luma':'#67e8f9','MiniMax':'#e08cff','Runway':'#f8fafc',
   'Pika':'#ffb86b','ElevenLabs':'#4ade80','Suno':'#ff7096','GitHub':'#a371f7','Windsurf':'#7dd3fc','Cursor':'#93c5fd',
-  'Alibaba':'#ff6a00','Cohere':'#395c6b','Microsoft':'#00a4ef','NVIDIA':'#76b900','Perplexity':'#20b8cd'
+  'Alibaba':'#ff6a00','Cohere':'#395c6b','Microsoft':'#00a4ef','NVIDIA':'#76b900','Perplexity':'#20b8cd','Moonshot AI':'#8b5cf6'
 };
+/* Категории для ОТРИСОВКИ карточек — здесь есть и код, чтобы карточки не ломались */
 const CATS = {
-  chat:{label:'Текст'}, 
-  image:{label:'Изображения'},
-  video:{label:'Видео'}, 
-  audio:{label:'Аудио'}
+  chat:{label:'Текст'}, image:{label:'Изображения'},
+  video:{label:'Видео'}, audio:{label:'Аудио'}, code:{label:'Код'}
 };
+/* Категории для ФИЛЬТРА «Функционал» — кода здесь намеренно нет */
 const FUNC_CATS = {
-  all:{label:'Все'},
-  chat:{label:'Текст'}, 
-  image:{label:'Изображения'},
-  video:{label:'Видео'}, 
-  audio:{label:'Аудио'}
+  all:{label:'Все'}, chat:{label:'Текст'}, image:{label:'Изображения'},
+  video:{label:'Видео'}, audio:{label:'Аудио'}
 };
 const TAGMETA = {
   ru:{cls:'m-ru', txt:'без VPN'}, vpn:{cls:'m-vpn', txt:'нужен VPN'},
@@ -290,6 +297,7 @@ const chipColor = t => (t==='ru'||t==='free')?'#57d9a3':(t==='vpn'||t==='limited
 const state = { q:'', func:'all', access:null, pay:null, place:null };
 const $ = s => document.querySelector(s);
 const grid = $('#grid');
+let M = [];
 
 function plural(n){ const a=Math.abs(n)%100,b=a%10; if(a>10&&a<20)return'моделей'; if(b>1&&b<5)return'модели'; if(b===1)return'модель'; return'моделей'; }
 
@@ -297,59 +305,65 @@ function filtered(){
   const q = state.q.trim().toLowerCase();
   let list = M.filter(m=>{
     if(state.func !== 'all' && m.c !== state.func) return false;
-    if(state.access && !m.tags.includes(state.access)) return false;
-    if(state.pay    && !m.tags.includes(state.pay))    return false;
-    if(state.place  && !m.tags.includes(state.place))  return false;
+    if(state.access && !(m.tags||[]).includes(state.access)) return false;
+    if(state.pay    && !(m.tags||[]).includes(state.pay))    return false;
+    if(state.place  && !(m.tags||[]).includes(state.place))  return false;
     if(q){
-      const hay=(m.n+' '+m.p+' '+(m.d||'')+' '+(m.f||'')+' '+CATS[m.c].label+' '+m.tags.map(t=>TAGMETA[t].txt).join(' ')).toLowerCase();
+      const catLabel = (CATS[m.c] ? CATS[m.c].label : '');
+      const tagTxt = (m.tags||[]).map(t=>TAGMETA[t]?TAGMETA[t].txt:'').join(' ');
+      const hay=(m.n+' '+m.p+' '+(m.d||'')+' '+(m.f||'')+' '+catLabel+' '+tagTxt).toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
-    });
+  });
   return list;
 }
 
 function activeCount(){ return (state.func!=='all'?1:0) + (state.access?1:0) + (state.pay?1:0) + (state.place?1:0); }
 
-/* ═══════════ РЕНДЕР КОМПАКТНЫХ КАРТОЧЕК ═══════════ */
+/* ═══════════ КАРТОЧКА ═══════════ */
 function cardHTML(m,i){
-  const c=CATS[m.c], col=PC[m.p]||'#35e0c2';
-  return `<article class="card" style="--pc:${col};transition-delay:${(i%8)*30}ms" onclick="toggleDetails(this)">
+  const c = CATS[m.c] || {label:'—'};
+  const col = PC[m.p] || '#35e0c2';
+  const tags = (m.tags||[]).map(t=>{
+    const tm = TAGMETA[t];
+    return tm ? `<span class="${tm.cls}">${tm.txt}</span>` : '';
+  }).join('');
+  return `<article class="card" style="--pc:${col}" onclick="toggleDetails(event,this)">
     <div class="card-top">
       <span class="prov"><i></i>${m.p}</span>
       <span class="cat">${c.label}</span>
     </div>
-    <h3>${m.n}${m.pop>=90?'<span class="hot">ТОП</span>':''}</h3>
+    <h3>${m.n}${(m.pop||0)>=90?'<span class="hot">ТОП</span>':''}</h3>
     <div class="free-badge">Бесплатный доступ</div>
-    <div class="card-hint">Нажмите для деталей <span>→</span></div>
-    <div class="details" style="display:none;">
-      <div class="modal-desc">${m.d || 'Описание отсутствует.'}</div>
-      <div class="modal-free">
+    <div class="card-hint">Подробнее <span>&#8594;</span></div>
+    <div class="details">
+      <div class="d-desc">${m.d || 'Описание отсутствует.'}</div>
+      <div class="d-tags">${tags}</div>
+      <div class="d-free">
         <b>Условия бесплатного доступа</b>
         <p>${m.f || 'Доступно бесплатно через агрегатор.'}</p>
       </div>
-      <div class="modal-links">
-        <a class="btn main" href="${m.u}" target="_blank" rel="noopener">Открыть модель <span class="arr">↗</span></a>
-        ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="arr">↗</span></a>`:''}
+      <div class="d-links">
+        <a class="btn main" href="${m.u}" target="_blank" rel="noopener">Открыть модель <span class="arr">&#8599;</span></a>
+        ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="arr">&#8599;</span></a>`:''}
       </div>
     </div>
   </article>`;
 }
 
-/* ═══════════ РАЗВОРАЧИВАНИЕ ДЕТАЛЕЙ ═══════════ */
-function toggleDetails(card) {
-  const details = card.querySelector('.details');
-  details.style.display = details.style.display === 'none' ? 'block' : 'none';
-  card.classList.toggle('active');
+/* раскрытие: клик по ссылкам и кнопкам внутри деталей не сворачивает карточку */
+function toggleDetails(e, card){
+  if(e.target.closest('.details')) return;
+  const d = card.querySelector('.details');
+  const open = d.classList.toggle('open');
+  card.classList.toggle('active', open);
 }
 
-/* ═══════════ ОТРИСОВКА СЕТКИ И ФИЛЬТРОВ ═══════════ */
-const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.08});
-
+/* ═══════════ РЕНДЕР ═══════════ */
 function renderGrid(){
   const list = filtered();
   grid.innerHTML = list.map(cardHTML).join('');
-  grid.querySelectorAll('.card').forEach(el=>io.observe(el));
   $('#resultCount').textContent = list.length;
   $('#resultWord').textContent = plural(list.length);
   $('#emptyState').classList.toggle('show', list.length===0);
@@ -361,7 +375,7 @@ function renderFuncChips(){
   const box=$('#funcChips');
   box.innerHTML = Object.entries(FUNC_CATS).map(([k,v])=>{
     const on = state.func===k ? 'on' : '';
-    return `<button class="chip ${on}" data-group="func" data-tag="${k}" style="--cc:var(--teal)">${v.label}</button>`;
+    return `<button class="chip ${on}" data-tag="${k}" style="--cc:var(--teal)">${v.label}</button>`;
   }).join('');
   box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
     state.func = ch.dataset.tag;
@@ -404,35 +418,29 @@ document.addEventListener('keydown',e=>{
   if(e.key==='/' && document.activeElement!==$('#searchInput')){ e.preventDefault(); $('#searchInput').focus(); }
   if(e.key==='Escape' && document.activeElement===$('#searchInput')){ $('#searchInput').blur(); }
 });
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('click', (e) => {
-    if (e.target === card) {
-      toggleDetails(card);
-    }
-  });
-});
 
 const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io2.unobserve(e.target);} }),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>io2.observe(el));
 
 /* ═══════════ СТАРТ ═══════════ */
-let M = [];
 fetch('models.json')
   .then(response => {
-    if (!response.ok) throw new Error('Не удалось загрузить models.json');
+    if (!response.ok) throw new Error('HTTP ' + response.status);
     return response.json();
   })
   .then(data => {
-    M = data;
+    M = Array.isArray(data) ? data : [];
     $('#totalModels').textContent = M.length;
+    $('#totalModelsWord').textContent = plural(M.length);
     $('#footModels').textContent = M.length;
+    $('#footModelsWord').textContent = plural(M.length);
     renderFuncChips();
-    renderFilterChips(); 
+    renderFilterChips();
     renderGrid();
   })
   .catch(err => {
     console.error("Ошибка загрузки данных:", err);
-    grid.innerHTML = '<p style="text-align:center; padding:40px; color:var(--red)">Ошибка загрузки списка моделей. Убедитесь, что файл models.json создан.</p>';
+    grid.innerHTML = '<p style="text-align:center;padding:40px;color:var(--red)">Не удалось прочитать models.json. Проверьте, что файл существует и содержит корректный JSON.</p>';
   });
 </script>
 </body>
