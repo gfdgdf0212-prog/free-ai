@@ -2,8 +2,11 @@ name: Update AI Models
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # Запуск каждые 12 часов
-  workflow_dispatch:        # Возможность запустить вручную кнопкой
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
@@ -11,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,7 +31,11 @@ jobs:
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add models.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update: актуализация списка бесплатных моделей"
-          git push
+          if git diff --staged --quiet; then
+            echo "Изменений в models.json нет, коммит не нужен."
+          else
+            git commit -m "Auto-update: актуализация списка бесплатных моделей"
+            git push || { echo "PUSH FAILED: проверьте Workflow permissions в настройках репозитория (должно быть Read and write)."; exit 1; }
+          fi
