@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Бесплатные нейросети и Free AI модели 2026 — каталог НейроРадар</title>
-<meta name="description" content="Актуальный каталог бесплатных нейросетей и AI-моделей: ChatGPT, Gemini, Claude, DeepSeek, Kimi. Условия бесплатного доступа, лимиты и прямые ссылки.">
-<meta name="keywords" content="бесплатные нейросети, free ai, бесплатные нейронки, каталог ии, free ai models, нейросети онлайн бесплатно, kimi, deepseek, llama">
+<meta name="description" content="Актуальный каталог бесплатных нейросетей и AI-моделей: ChatGPT, Gemini, Claude, DeepSeek, Kimi, Qwen. Условия бесплатного доступа, лимиты и прямые ссылки.">
+<meta name="keywords" content="бесплатные нейросети, free ai, бесплатные нейронки, каталог ии, free ai models, нейросети онлайн бесплатно, kimi, qwen, deepseek, llama">
 <meta property="og:title" content="Бесплатные нейросети и Free AI модели 2026">
 <meta property="og:description" content="Живой справочник бесплатных ИИ-моделей с прямыми ссылками и условиями доступа.">
 <meta property="og:type" content="website">
@@ -89,38 +89,32 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .clearbtn.show{display:inline-block}
 .clearbtn:hover{background:rgba(255,180,84,.12)}
 
-/* ══ СЕТКА (десктоп, вариант A) ══ */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:14px;align-items:stretch}
-.card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;min-height:132px;
+.card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;min-height:118px;
   background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--pc);
   border-radius:12px;padding:14px 16px;cursor:pointer;
   transition:transform .3s,border-color .25s,box-shadow .25s,background .25s}
 .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--pc) 55%,var(--line));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--pc) 30%,transparent)}
 .card.active{border-color:var(--pc);box-shadow:0 0 0 1px var(--pc),0 18px 44px -16px color-mix(in srgb,var(--pc) 60%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--pc) 8%,var(--panel2)),var(--panel))}
 
-.card-head{display:grid;grid-template-columns:1fr auto;gap:7px 8px;align-content:start;flex:1;
-  grid-template-areas:"prov cat""name name""free free""hint hint"}
+.card-head{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr;gap:7px 8px;flex:1;
+  grid-template-areas:"prov cat""name name""hint hint"}
 .prov{grid-area:prov;display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--pc);text-transform:uppercase}
 .prov i{width:7px;height:7px;border-radius:50%;background:var(--pc);box-shadow:0 0 6px var(--pc);flex:none}
 .cat{grid-area:cat;justify-self:end;align-self:start;font-size:10px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:2px 7px;white-space:nowrap}
 .card h3{grid-area:name;font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.hot{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:1px;color:#0a0f1a;background:linear-gradient(90deg,var(--amber),#ff8f5e);border-radius:3px;padding:2px 6px;text-transform:uppercase}
-.free-badge{grid-area:free;font-size:11px;color:var(--teal);font-weight:600;display:flex;align-items:center;gap:6px}
-.free-badge::before{content:'';width:6px;height:6px;border-radius:2px;background:var(--teal);box-shadow:0 0 6px var(--teal);flex:none}
-.hint{grid-area:hint;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:auto;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:6px}
+.hint{grid-area:hint;align-self:end;font-size:10px;color:var(--dim);font-family:var(--mono);padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:6px}
 .hint .ar{transition:transform .25s}
 .card:hover .hint .ar{transform:translateX(3px)}
 .arrow{display:none}
 
-/* ══ ВНЕШНЯЯ ПАНЕЛЬ РАСКРЫТИЯ (десктоп) ══ */
 .expander{grid-column:1/-1;position:relative;display:none;
   background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:16px;
   padding:22px 24px;margin-top:2px;--ptr:50%;box-shadow:0 24px 60px -28px rgba(0,0,0,.9)}
 .expander.open{display:block;animation:expIn .32s cubic-bezier(.2,.9,.3,1.1)}
 @keyframes expIn{from{opacity:0;transform:translateY(-10px)}}
-.expander::before,.expander::after{content:'';position:absolute;top:-8px;left:var(--ptr);width:14px;height:14px;transform:translateX(-50%) rotate(45deg)}
-.expander::before{background:var(--panel2);border-left:1px solid var(--line2);border-top:1px solid var(--line2)}
-.expander::after{display:none}
+.expander::before{content:'';position:absolute;top:-8px;left:var(--ptr);width:14px;height:14px;transform:translateX(-50%) rotate(45deg);
+  background:var(--panel2);border-left:1px solid var(--line2);border-top:1px solid var(--line2)}
 .exp-inner{display:grid;grid-template-columns:1fr 232px;gap:26px}
 .exp-side{border-left:1px solid var(--line);padding-left:22px;display:flex;flex-direction:column;gap:16px}
 .spec-lbl{font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
@@ -128,7 +122,6 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .meter{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:8px}
 .meter i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--amber));width:calc(var(--pw)*1%);transition:width .8s cubic-bezier(.2,.8,.2,1)}
 
-/* ══ ОБЩИЙ КОНТЕНТ ДЕТАЛЕЙ ══ */
 .d-desc{color:var(--mut);font-size:14px;line-height:1.6;margin-bottom:14px}
 .d-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
 .d-tags span{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:6px;border:1px solid var(--line)}
@@ -150,7 +143,6 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .m-local{color:var(--blue);border-color:rgba(102,157,246,.4)}
 .m-online{color:var(--mut);border-color:var(--line2)}
 
-/* внутренний details на десктопе НЕ показывается (детали живут во внешней панели) */
 .details{display:none}
 
 .empty{display:none;text-align:center;padding:70px 20px;border:1px dashed var(--line2);border-radius:16px;color:var(--mut)}
@@ -185,7 +177,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .exp-side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:16px;flex-direction:row;flex-wrap:wrap;gap:24px}
 }
 
-/* ══ МОБИЛЬНЫЙ РЕЖИМ (вариант C — список-аккордеон) ══ */
 @media (max-width:760px){
   main{padding:0 16px}
   .search kbd{display:none}
@@ -200,12 +191,10 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .card-head{display:flex;align-items:center;gap:11px;padding:14px 15px;flex:none}
   .prov{order:1;flex:none}
   .card h3{order:2;flex:1;min-width:0;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .free-badge{order:3;flex:none;font-size:10px}
-  .arrow{order:4;display:flex;flex:none;color:var(--dim);font-size:13px;transition:transform .3s,color .3s}
+  .arrow{order:3;display:flex;flex:none;color:var(--dim);font-size:13px;transition:transform .3s,color .3s}
   .card.active .arrow{transform:rotate(90deg);color:var(--pc)}
   .cat{display:none}
   .hint{display:none}
-  /* внутренний details на мобильном раскрывается inline */
   .details{display:none;padding:0 15px 16px;border-top:1px solid var(--line)}
   .card.open .details{display:block;animation:fadeDown .3s ease}
   .d-links{flex-direction:column}
@@ -290,7 +279,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
 </footer>
 
 <script>
-/* ═══════════ ДАННЫЕ ═══════════ */
 const PC = {
   'OpenAI':'#10a37f','Anthropic':'#d97757','Google':'#669df6','Meta':'#0082fb','xAI':'#aeb8c6',
   'DeepSeek':'#4d6bfe','Mistral':'#ff7000','Яндекс':'#f5413d','Сбер':'#21a038','Groq':'#ff7a45',
@@ -300,6 +288,7 @@ const PC = {
   'Pika':'#ffb86b','ElevenLabs':'#4ade80','Suno':'#ff7096','GitHub':'#a371f7','Windsurf':'#7dd3fc','Cursor':'#93c5fd',
   'Alibaba':'#ff6a00','Cohere':'#395c6b','Microsoft':'#00a4ef','NVIDIA':'#76b900','Perplexity':'#20b8cd','Moonshot AI':'#8b5cf6'
 };
+/* code оставлен в словаре только как страховка от падения; в выдачу такие модели не попадают */
 const CATS = { chat:{label:'Текст'}, image:{label:'Изображения'}, video:{label:'Видео'}, audio:{label:'Аудио'}, code:{label:'Код'} };
 const FUNC_CATS = { all:{label:'Все'}, chat:{label:'Текст'}, image:{label:'Изображения'}, video:{label:'Видео'}, audio:{label:'Аудио'} };
 const TAGMETA = {
@@ -318,6 +307,7 @@ const state = { q:'', func:'all', access:null, pay:null, place:null };
 const $ = s => document.querySelector(s);
 const grid = $('#grid');
 let M = [];
+let BASE = [];
 let activeIdx = null;
 const mqMobile = window.matchMedia('(max-width:760px)');
 
@@ -325,7 +315,7 @@ function plural(n){ const a=Math.abs(n)%100,b=a%10; if(a>10&&a<20)return'мод�
 
 function filtered(){
   const q = state.q.trim().toLowerCase();
-  return M.filter(m=>{
+  return BASE.filter(m=>{
     if(state.func !== 'all' && m.c !== state.func) return false;
     if(state.access && !(m.tags||[]).includes(state.access)) return false;
     if(state.pay    && !(m.tags||[]).includes(state.pay))    return false;
@@ -341,7 +331,6 @@ function filtered(){
 }
 function activeCount(){ return (state.func!=='all'?1:0)+(state.access?1:0)+(state.pay?1:0)+(state.place?1:0); }
 
-/* общий контент деталей (идёт и в мобильный inline, и в десктопную панель) */
 function detailsHTML(m){
   const tags = (m.tags||[]).map(t=>{ const tm=TAGMETA[t]; return tm?`<span class="${tm.cls}">${tm.txt}</span>`:''; }).join('');
   return `
@@ -367,8 +356,7 @@ function cardHTML(m,i){
     <div class="card-head">
       <span class="prov"><i></i>${m.p}</span>
       <span class="cat">${c.label}</span>
-      <h3>${m.n}${(m.pop||0)>=90?'<span class="hot">ТОП</span>':''}</h3>
-      <span class="free-badge">Бесплатный доступ</span>
+      <h3>${m.n}</h3>
       <span class="hint">Подробнее <span class="ar">&#8594;</span></span>
       <span class="arrow">&#8250;</span>
     </div>
@@ -376,7 +364,6 @@ function cardHTML(m,i){
   </article>`;
 }
 
-/* ═══ РАСКРЫТИЕ ═══ */
 let expander = null;
 function ensureExpander(){
   if(expander) return expander;
@@ -404,7 +391,6 @@ function positionExpander(idx){
   const cols = colsCount();
   const rowEnd = Math.min((Math.floor(idx/cols)+1)*cols - 1, cards.length-1);
   cards[rowEnd].after(expander);
-  expander.querySelector('.exp-main').style.setProperty('--pc', PC[M[idx].p]||'#35e0c2');
   const cr = card.getBoundingClientRect();
   const er = expander.getBoundingClientRect();
   let left = cr.left + cr.width/2 - er.left;
@@ -438,7 +424,6 @@ function toggle(idx){
   }
 }
 
-/* ═══ РЕНДЕР ═══ */
 function renderGrid(){
   closeAll();
   if(expander && expander.parentNode) expander.parentNode.removeChild(expander);
@@ -446,7 +431,7 @@ function renderGrid(){
   grid.innerHTML = list.map(cardHTML).join('');
   grid.querySelectorAll('.card').forEach(c=>{
     c.addEventListener('click', e=>{
-      if(e.target.closest('.details')) return; /* клик по ссылкам внутри не сворачивает */
+      if(e.target.closest('.details')) return;
       toggle(+c.dataset.i);
     });
   });
@@ -474,7 +459,6 @@ function updateFiltersBadge(){
   $('#filtersLabel').textContent = n>0 ? `Фильтры · ${n}` : 'Фильтры';
 }
 
-/* ═══ СОБЫТИЯ ═══ */
 let deb;
 $('#searchInput').addEventListener('input',e=>{ clearTimeout(deb); deb=setTimeout(()=>{ state.q=e.target.value; renderGrid(); },130); });
 $('#filtersToggle').addEventListener('click',()=>{ const o=$('#toolbar').classList.toggle('open'); $('#filtersToggle').setAttribute('aria-expanded',o); });
@@ -500,15 +484,15 @@ window.addEventListener('resize',()=>{
 const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io2.unobserve(e.target);} }),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>io2.observe(el));
 
-/* ═══ СТАРТ ═══ */
 fetch('models.json')
   .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
   .then(data=>{
     M = Array.isArray(data)?data:[];
-    $('#totalModels').textContent = M.length;
-    $('#totalModelsWord').textContent = plural(M.length);
-    $('#footModels').textContent = M.length;
-    $('#footModelsWord').textContent = plural(M.length);
+    BASE = M.filter(m=>m.c!=='code');
+    $('#totalModels').textContent = BASE.length;
+    $('#totalModelsWord').textContent = plural(BASE.length);
+    $('#footModels').textContent = BASE.length;
+    $('#footModelsWord').textContent = plural(BASE.length);
     renderFuncChips(); renderFilterChips(); renderGrid();
   })
   .catch(err=>{ console.error('Ошибка загрузки данных:', err); grid.innerHTML = '<p style="text-align:center;padding:40px;color:var(--red)">Не удалось прочитать models.json. Проверьте, что файл существует и содержит корректный JSON.</p>'; });
