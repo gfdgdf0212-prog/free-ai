@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Бесплатные нейросети и Free AI модели 2026 — каталог НейроРадар</title>
-<meta name="description" content="Актуальный каталог бесплатных нейросетей и AI-моделей: ChatGPT, Gemini, Claude, DeepSeek. Условия бесплатного доступа, лимиты и прямые ссылки.">
-<meta name="keywords" content="бесплатные нейросети, free ai, бесплатные нейронки, каталог ии, free ai models, нейросети онлайн бесплатно">
+<meta name="description" content="Актуальный каталог бесплатных нейросетей и AI-моделей: ChatGPT, Gemini, Claude, DeepSeek, Kimi. Условия бесплатного доступа, лимиты и прямые ссылки.">
+<meta name="keywords" content="бесплатные нейросети, free ai, бесплатные нейронки, каталог ии, free ai models, нейросети онлайн бесплатно, kimi, deepseek, llama">
 <meta property="og:title" content="Бесплатные нейросети и Free AI модели 2026">
 <meta property="og:description" content="Живой справочник бесплатных ИИ-моделей с прямыми ссылками и условиями доступа.">
 <meta property="og:type" content="website">
@@ -89,49 +89,69 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .clearbtn.show{display:inline-block}
 .clearbtn:hover{background:rgba(255,180,84,.12)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-items:start}
-.card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;gap:8px;
+/* ══ СЕТКА (десктоп, вариант A) ══ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:14px;align-items:stretch}
+.card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;min-height:132px;
   background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--pc);
   border-radius:12px;padding:14px 16px;cursor:pointer;
-  transition:transform .3s,border-color .25s,box-shadow .25s}
+  transition:transform .3s,border-color .25s,box-shadow .25s,background .25s}
 .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--pc) 55%,var(--line));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--pc) 30%,transparent)}
-.card.active{border-color:color-mix(in srgb,var(--pc) 60%,var(--line));box-shadow:0 14px 34px -14px color-mix(in srgb,var(--pc) 35%,transparent)}
-.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.prov{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--pc);text-transform:uppercase}
-.prov i{width:7px;height:7px;border-radius:50%;background:var(--pc);box-shadow:0 0 6px var(--pc)}
-.cat{font-size:10px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:2px 7px;white-space:nowrap}
-.card h3{font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card.active{border-color:var(--pc);box-shadow:0 0 0 1px var(--pc),0 18px 44px -16px color-mix(in srgb,var(--pc) 60%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--pc) 8%,var(--panel2)),var(--panel))}
+
+.card-head{display:grid;grid-template-columns:1fr auto;gap:7px 8px;align-content:start;flex:1;
+  grid-template-areas:"prov cat""name name""free free""hint hint"}
+.prov{grid-area:prov;display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--pc);text-transform:uppercase}
+.prov i{width:7px;height:7px;border-radius:50%;background:var(--pc);box-shadow:0 0 6px var(--pc);flex:none}
+.cat{grid-area:cat;justify-self:end;align-self:start;font-size:10px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:2px 7px;white-space:nowrap}
+.card h3{grid-area:name;font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .hot{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:1px;color:#0a0f1a;background:linear-gradient(90deg,var(--amber),#ff8f5e);border-radius:3px;padding:2px 6px;text-transform:uppercase}
-.free-badge{font-size:11px;color:var(--teal);font-weight:600;display:flex;align-items:center;gap:6px}
+.free-badge{grid-area:free;font-size:11px;color:var(--teal);font-weight:600;display:flex;align-items:center;gap:6px}
 .free-badge::before{content:'';width:6px;height:6px;border-radius:2px;background:var(--teal);box-shadow:0 0 6px var(--teal);flex:none}
-.card-hint{font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:auto;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px}
-.card-hint span{transition:transform .2s}
-.card:hover .card-hint span{transform:translateX(3px)}
-.card.active .card-hint span{transform:rotate(90deg)}
+.hint{grid-area:hint;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:auto;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:6px}
+.hint .ar{transition:transform .25s}
+.card:hover .hint .ar{transform:translateX(3px)}
+.arrow{display:none}
 
-.details{display:none;margin-top:14px;padding-top:12px;border-top:1px solid var(--line2);color:var(--mut);font-size:13px;cursor:default}
-.details.open{display:block;animation:fadeDown .3s ease}
-.details .d-desc{margin-bottom:12px;line-height:1.5}
-.details .d-free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:12px;padding:14px;margin-bottom:12px}
-.details .d-free b{color:var(--teal);display:block;margin-bottom:6px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-family:var(--mono)}
-.details .d-free p{color:#c9f5ea;font-size:13px;line-height:1.5}
-.details .d-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.details .d-tags span{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:6px;border:1px solid var(--line)}
-.details .d-links{display:flex;gap:10px;flex-wrap:wrap}
-.details .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:600;border-radius:10px;padding:9px 16px;transition:.2s}
-.details .btn .arr{transition:transform .2s;font-size:13px}
-.details .btn:hover .arr{transform:translate(2px,-2px)}
-.details .btn.main{background:color-mix(in srgb,var(--pc) 20%,var(--panel));border:1px solid color-mix(in srgb,var(--pc) 60%,transparent);color:var(--txt)}
-.details .btn.main:hover{background:color-mix(in srgb,var(--pc) 35%,var(--panel));transform:translateY(-2px)}
-.details .btn.ghost{border:1px solid var(--line);color:var(--mut)}
-.details .btn.ghost:hover{border-color:var(--line2);color:var(--txt);transform:translateY(-2px)}
+/* ══ ВНЕШНЯЯ ПАНЕЛЬ РАСКРЫТИЯ (десктоп) ══ */
+.expander{grid-column:1/-1;position:relative;display:none;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:16px;
+  padding:22px 24px;margin-top:2px;--ptr:50%;box-shadow:0 24px 60px -28px rgba(0,0,0,.9)}
+.expander.open{display:block;animation:expIn .32s cubic-bezier(.2,.9,.3,1.1)}
+@keyframes expIn{from{opacity:0;transform:translateY(-10px)}}
+.expander::before,.expander::after{content:'';position:absolute;top:-8px;left:var(--ptr);width:14px;height:14px;transform:translateX(-50%) rotate(45deg)}
+.expander::before{background:var(--panel2);border-left:1px solid var(--line2);border-top:1px solid var(--line2)}
+.expander::after{display:none}
+.exp-inner{display:grid;grid-template-columns:1fr 232px;gap:26px}
+.exp-side{border-left:1px solid var(--line);padding-left:22px;display:flex;flex-direction:column;gap:16px}
+.spec-lbl{font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.spec-val{font-family:var(--disp);font-weight:700;font-size:20px;color:var(--txt)}
+.meter{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:8px}
+.meter i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--amber));width:calc(var(--pw)*1%);transition:width .8s cubic-bezier(.2,.8,.2,1)}
 
+/* ══ ОБЩИЙ КОНТЕНТ ДЕТАЛЕЙ ══ */
+.d-desc{color:var(--mut);font-size:14px;line-height:1.6;margin-bottom:14px}
+.d-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.d-tags span{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:6px;border:1px solid var(--line)}
+.d-free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:12px;padding:14px;margin-bottom:16px}
+.d-free b{color:var(--teal);display:block;margin-bottom:6px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-family:var(--mono)}
+.d-free p{color:#c9f5ea;font-size:13px;line-height:1.5}
+.d-links{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:600;border-radius:10px;padding:9px 16px;transition:.2s}
+.btn .ar{transition:transform .2s;font-size:13px}
+.btn:hover .ar{transform:translate(2px,-2px)}
+.btn.main{background:color-mix(in srgb,var(--pc) 20%,var(--panel));border:1px solid color-mix(in srgb,var(--pc) 60%,transparent);color:var(--txt)}
+.btn.main:hover{background:color-mix(in srgb,var(--pc) 35%,var(--panel));transform:translateY(-2px)}
+.btn.ghost{border:1px solid var(--line);color:var(--mut)}
+.btn.ghost:hover{border-color:var(--line2);color:var(--txt);transform:translateY(-2px)}
 .m-ru{color:#57d9a3;border-color:rgba(87,217,163,.4)}
 .m-vpn{color:var(--amber);border-color:rgba(255,180,84,.4)}
 .m-free{color:var(--teal);border-color:rgba(53,224,194,.4)}
 .m-limited{color:#ffcf8a;border-color:rgba(255,180,84,.32)}
 .m-local{color:var(--blue);border-color:rgba(102,157,246,.4)}
 .m-online{color:var(--mut);border-color:var(--line2)}
+
+/* внутренний details на десктопе НЕ показывается (детали живут во внешней панели) */
+.details{display:none}
 
 .empty{display:none;text-align:center;padding:70px 20px;border:1px dashed var(--line2);border-radius:16px;color:var(--mut)}
 .empty.show{display:block}
@@ -161,15 +181,36 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .chip{flex:none}
   .chips-label{min-width:auto;flex:none}
   .foot-in{grid-template-columns:1fr;gap:26px}
+  .exp-inner{grid-template-columns:1fr;gap:18px}
+  .exp-side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:16px;flex-direction:row;flex-wrap:wrap;gap:24px}
 }
-@media (max-width:640px){
+
+/* ══ МОБИЛЬНЫЙ РЕЖИМ (вариант C — список-аккордеон) ══ */
+@media (max-width:760px){
   main{padding:0 16px}
   .search kbd{display:none}
   .tb-right{display:none}
   .topbar{padding-top:24px}
-  .grid{grid-template-columns:1fr}
-  .details .d-links{flex-direction:column}
-  .details .btn{width:100%;justify-content:center}
+  .grid{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+  .card{min-height:0;border:none;border-left:none;border-radius:0;border-bottom:1px solid var(--line);
+    border-top:2px solid transparent;padding:0;background:transparent;cursor:pointer}
+  .card:last-child{border-bottom:none}
+  .card:hover{transform:none;box-shadow:none}
+  .card.active{background:linear-gradient(180deg,color-mix(in srgb,var(--pc) 9%,transparent),transparent);border-top-color:var(--pc);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--pc) 35%,transparent)}
+  .card-head{display:flex;align-items:center;gap:11px;padding:14px 15px;flex:none}
+  .prov{order:1;flex:none}
+  .card h3{order:2;flex:1;min-width:0;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .free-badge{order:3;flex:none;font-size:10px}
+  .arrow{order:4;display:flex;flex:none;color:var(--dim);font-size:13px;transition:transform .3s,color .3s}
+  .card.active .arrow{transform:rotate(90deg);color:var(--pc)}
+  .cat{display:none}
+  .hint{display:none}
+  /* внутренний details на мобильном раскрывается inline */
+  .details{display:none;padding:0 15px 16px;border-top:1px solid var(--line)}
+  .card.open .details{display:block;animation:fadeDown .3s ease}
+  .d-links{flex-direction:column}
+  .d-links .btn{width:100%;justify-content:center}
+  .expander{display:none !important}
 }
 </style>
 </head>
@@ -202,22 +243,10 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
       </button>
     </div>
     <div class="filters-body" id="filtersBody">
-      <div class="tb-row">
-        <span class="chips-label">Функционал</span>
-        <div class="chips" id="funcChips"></div>
-      </div>
-      <div class="tb-row">
-        <span class="chips-label">Доступ</span>
-        <div class="chips" id="accessChips"></div>
-      </div>
-      <div class="tb-row">
-        <span class="chips-label">Оплата</span>
-        <div class="chips" id="payChips"></div>
-      </div>
-      <div class="tb-row">
-        <span class="chips-label">Запуск</span>
-        <div class="chips" id="placeChips"></div>
-      </div>
+      <div class="tb-row"><span class="chips-label">Функционал</span><div class="chips" id="funcChips"></div></div>
+      <div class="tb-row"><span class="chips-label">Доступ</span><div class="chips" id="accessChips"></div></div>
+      <div class="tb-row"><span class="chips-label">Оплата</span><div class="chips" id="payChips"></div></div>
+      <div class="tb-row"><span class="chips-label">Запуск</span><div class="chips" id="placeChips"></div></div>
     </div>
   </section>
 
@@ -271,16 +300,8 @@ const PC = {
   'Pika':'#ffb86b','ElevenLabs':'#4ade80','Suno':'#ff7096','GitHub':'#a371f7','Windsurf':'#7dd3fc','Cursor':'#93c5fd',
   'Alibaba':'#ff6a00','Cohere':'#395c6b','Microsoft':'#00a4ef','NVIDIA':'#76b900','Perplexity':'#20b8cd','Moonshot AI':'#8b5cf6'
 };
-/* Категории для ОТРИСОВКИ карточек — здесь есть и код, чтобы карточки не ломались */
-const CATS = {
-  chat:{label:'Текст'}, image:{label:'Изображения'},
-  video:{label:'Видео'}, audio:{label:'Аудио'}, code:{label:'Код'}
-};
-/* Категории для ФИЛЬТРА «Функционал» — кода здесь намеренно нет */
-const FUNC_CATS = {
-  all:{label:'Все'}, chat:{label:'Текст'}, image:{label:'Изображения'},
-  video:{label:'Видео'}, audio:{label:'Аудио'}
-};
+const CATS = { chat:{label:'Текст'}, image:{label:'Изображения'}, video:{label:'Видео'}, audio:{label:'Аудио'}, code:{label:'Код'} };
+const FUNC_CATS = { all:{label:'Все'}, chat:{label:'Текст'}, image:{label:'Изображения'}, video:{label:'Видео'}, audio:{label:'Аудио'} };
 const TAGMETA = {
   ru:{cls:'m-ru', txt:'без VPN'}, vpn:{cls:'m-vpn', txt:'нужен VPN'},
   free:{cls:'m-free', txt:'полностью бесплатно'}, limited:{cls:'m-limited', txt:'с лимитами'},
@@ -293,155 +314,204 @@ const GROUPS = [
 ];
 const chipColor = t => (t==='ru'||t==='free')?'#57d9a3':(t==='vpn'||t==='limited')?'var(--amber)':t==='local'?'var(--blue)':'var(--mut)';
 
-/* ═══════════ СОСТОЯНИЕ ═══════════ */
 const state = { q:'', func:'all', access:null, pay:null, place:null };
 const $ = s => document.querySelector(s);
 const grid = $('#grid');
 let M = [];
+let activeIdx = null;
+const mqMobile = window.matchMedia('(max-width:760px)');
 
 function plural(n){ const a=Math.abs(n)%100,b=a%10; if(a>10&&a<20)return'моделей'; if(b>1&&b<5)return'модели'; if(b===1)return'модель'; return'моделей'; }
 
 function filtered(){
   const q = state.q.trim().toLowerCase();
-  let list = M.filter(m=>{
+  return M.filter(m=>{
     if(state.func !== 'all' && m.c !== state.func) return false;
     if(state.access && !(m.tags||[]).includes(state.access)) return false;
     if(state.pay    && !(m.tags||[]).includes(state.pay))    return false;
     if(state.place  && !(m.tags||[]).includes(state.place))  return false;
     if(q){
-      const catLabel = (CATS[m.c] ? CATS[m.c].label : '');
+      const catLabel = CATS[m.c] ? CATS[m.c].label : '';
       const tagTxt = (m.tags||[]).map(t=>TAGMETA[t]?TAGMETA[t].txt:'').join(' ');
       const hay=(m.n+' '+m.p+' '+(m.d||'')+' '+(m.f||'')+' '+catLabel+' '+tagTxt).toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
   });
-  return list;
+}
+function activeCount(){ return (state.func!=='all'?1:0)+(state.access?1:0)+(state.pay?1:0)+(state.place?1:0); }
+
+/* общий контент деталей (идёт и в мобильный inline, и в десктопную панель) */
+function detailsHTML(m){
+  const tags = (m.tags||[]).map(t=>{ const tm=TAGMETA[t]; return tm?`<span class="${tm.cls}">${tm.txt}</span>`:''; }).join('');
+  return `
+    <div class="d-desc">${m.d||'Описание отсутствует.'}</div>
+    <div class="d-tags">${tags}</div>
+    <div class="d-free"><b>Условия бесплатного доступа</b><p>${m.f||'Доступно бесплатно через агрегатор.'}</p></div>
+    <div class="d-links">
+      <a class="btn main" href="${m.u}" target="_blank" rel="noopener">Открыть модель <span class="ar">&#8599;</span></a>
+      ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="ar">&#8599;</span></a>`:''}
+    </div>`;
+}
+function specsHTML(m){
+  const pop = m.pop||0;
+  return `
+    <div><div class="spec-lbl">Контекст</div><div class="spec-val">${m.ctx||'—'}</div></div>
+    <div><div class="spec-lbl">Рейтинг</div><div class="spec-val">${pop}</div><div class="meter"><i style="--pw:${pop}"></i></div></div>`;
 }
 
-function activeCount(){ return (state.func!=='all'?1:0) + (state.access?1:0) + (state.pay?1:0) + (state.place?1:0); }
-
-/* ═══════════ КАРТОЧКА ═══════════ */
 function cardHTML(m,i){
   const c = CATS[m.c] || {label:'—'};
   const col = PC[m.p] || '#35e0c2';
-  const tags = (m.tags||[]).map(t=>{
-    const tm = TAGMETA[t];
-    return tm ? `<span class="${tm.cls}">${tm.txt}</span>` : '';
-  }).join('');
-  return `<article class="card" style="--pc:${col}" onclick="toggleDetails(event,this)">
-    <div class="card-top">
+  return `<article class="card" style="--pc:${col}" data-i="${i}">
+    <div class="card-head">
       <span class="prov"><i></i>${m.p}</span>
       <span class="cat">${c.label}</span>
+      <h3>${m.n}${(m.pop||0)>=90?'<span class="hot">ТОП</span>':''}</h3>
+      <span class="free-badge">Бесплатный доступ</span>
+      <span class="hint">Подробнее <span class="ar">&#8594;</span></span>
+      <span class="arrow">&#8250;</span>
     </div>
-    <h3>${m.n}${(m.pop||0)>=90?'<span class="hot">ТОП</span>':''}</h3>
-    <div class="free-badge">Бесплатный доступ</div>
-    <div class="card-hint">Подробнее <span>&#8594;</span></div>
-    <div class="details">
-      <div class="d-desc">${m.d || 'Описание отсутствует.'}</div>
-      <div class="d-tags">${tags}</div>
-      <div class="d-free">
-        <b>Условия бесплатного доступа</b>
-        <p>${m.f || 'Доступно бесплатно через агрегатор.'}</p>
-      </div>
-      <div class="d-links">
-        <a class="btn main" href="${m.u}" target="_blank" rel="noopener">Открыть модель <span class="arr">&#8599;</span></a>
-        ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="arr">&#8599;</span></a>`:''}
-      </div>
-    </div>
+    <div class="details">${detailsHTML(m)}</div>
   </article>`;
 }
 
-/* раскрытие: клик по ссылкам и кнопкам внутри деталей не сворачивает карточку */
-function toggleDetails(e, card){
-  if(e.target.closest('.details')) return;
-  const d = card.querySelector('.details');
-  const open = d.classList.toggle('open');
-  card.classList.toggle('active', open);
+/* ═══ РАСКРЫТИЕ ═══ */
+let expander = null;
+function ensureExpander(){
+  if(expander) return expander;
+  expander = document.createElement('div');
+  expander.className = 'expander';
+  expander.innerHTML = '<div class="exp-inner"><div class="exp-main"></div><div class="exp-side"></div></div>';
+  expander.addEventListener('click', e => e.stopPropagation());
+  return expander;
+}
+function colsCount(){
+  const v = getComputedStyle(grid).gridTemplateColumns;
+  return v.split(' ').filter(Boolean).length || 1;
+}
+function cardEls(){ return grid.querySelectorAll('.card'); }
+
+function closeAll(){
+  activeIdx = null;
+  cardEls().forEach(c=>c.classList.remove('active','open'));
+  if(expander){ expander.classList.remove('open'); }
+}
+function positionExpander(idx){
+  const cards = cardEls();
+  const card = cards[idx];
+  if(!card || !expander) return;
+  const cols = colsCount();
+  const rowEnd = Math.min((Math.floor(idx/cols)+1)*cols - 1, cards.length-1);
+  cards[rowEnd].after(expander);
+  expander.querySelector('.exp-main').style.setProperty('--pc', PC[M[idx].p]||'#35e0c2');
+  const cr = card.getBoundingClientRect();
+  const er = expander.getBoundingClientRect();
+  let left = cr.left + cr.width/2 - er.left;
+  left = Math.max(24, Math.min(left, er.width-24));
+  expander.style.setProperty('--ptr', left+'px');
+}
+function openDesktop(idx){
+  const cards = cardEls();
+  cards.forEach(c=>c.classList.remove('active'));
+  cards[idx].classList.add('active');
+  const m = M[idx];
+  const ex = ensureExpander();
+  ex.querySelector('.exp-main').innerHTML = detailsHTML(m);
+  ex.querySelector('.exp-main').style.setProperty('--pc', PC[m.p]||'#35e0c2');
+  ex.querySelector('.exp-side').innerHTML = specsHTML(m);
+  ex.classList.add('open');
+  positionExpander(idx);
+  requestAnimationFrame(()=>{ const i=ex.querySelector('.meter i'); if(i){ const w=i.style.getPropertyValue('--pw'); i.style.width='0'; requestAnimationFrame(()=>i.style.width='calc('+w+'*1%)'); } });
+}
+function toggle(idx){
+  if(mqMobile.matches){
+    const cards = cardEls();
+    const card = cards[idx];
+    const willOpen = !card.classList.contains('open');
+    cards.forEach(c=>c.classList.remove('open','active'));
+    if(willOpen){ card.classList.add('open','active'); activeIdx = idx; }
+    else activeIdx = null;
+  } else {
+    if(activeIdx === idx){ closeAll(); }
+    else { activeIdx = idx; openDesktop(idx); }
+  }
 }
 
-/* ═══════════ РЕНДЕР ═══════════ */
+/* ═══ РЕНДЕР ═══ */
 function renderGrid(){
+  closeAll();
+  if(expander && expander.parentNode) expander.parentNode.removeChild(expander);
   const list = filtered();
   grid.innerHTML = list.map(cardHTML).join('');
+  grid.querySelectorAll('.card').forEach(c=>{
+    c.addEventListener('click', e=>{
+      if(e.target.closest('.details')) return; /* клик по ссылкам внутри не сворачивает */
+      toggle(+c.dataset.i);
+    });
+  });
   $('#resultCount').textContent = list.length;
   $('#resultWord').textContent = plural(list.length);
   $('#emptyState').classList.toggle('show', list.length===0);
   $('#clearBtn').classList.toggle('show', activeCount()>0 || state.q.trim().length>0);
   updateFiltersBadge();
 }
-
 function renderFuncChips(){
   const box=$('#funcChips');
-  box.innerHTML = Object.entries(FUNC_CATS).map(([k,v])=>{
-    const on = state.func===k ? 'on' : '';
-    return `<button class="chip ${on}" data-tag="${k}" style="--cc:var(--teal)">${v.label}</button>`;
-  }).join('');
-  box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
-    state.func = ch.dataset.tag;
-    renderFuncChips(); renderGrid();
-  });
+  box.innerHTML = Object.entries(FUNC_CATS).map(([k,v])=>`<button class="chip ${state.func===k?'on':''}" data-tag="${k}" style="--cc:var(--teal)">${v.label}</button>`).join('');
+  box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{ state.func=ch.dataset.tag; renderFuncChips(); renderGrid(); });
 }
-
 function renderFilterChips(){
   GROUPS.forEach(g=>{
     const box=$(g.box);
-    box.innerHTML = g.items.map(([t,l])=>{
-      const on = state[g.key]===t ? 'on' : '';
-      return `<button class="chip ${on}" data-group="${g.key}" data-tag="${t}" style="--cc:${chipColor(t)}">${l}</button>`;
-    }).join('');
-    box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
-      const t=ch.dataset.tag;
-      state[g.key] = (state[g.key]===t) ? null : t;
-      renderFilterChips(); renderGrid();
-    });
+    box.innerHTML = g.items.map(([t,l])=>`<button class="chip ${state[g.key]===t?'on':''}" data-tag="${t}" style="--cc:${chipColor(t)}">${l}</button>`).join('');
+    box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{ const t=ch.dataset.tag; state[g.key]=(state[g.key]===t)?null:t; renderFilterChips(); renderGrid(); });
   });
 }
-
 function updateFiltersBadge(){
   const n=activeCount(), c=$('#filtersCnt');
   c.textContent=n; c.classList.toggle('show',n>0);
   $('#filtersLabel').textContent = n>0 ? `Фильтры · ${n}` : 'Фильтры';
 }
 
-/* ═══════════ СОБЫТИЯ ═══════════ */
+/* ═══ СОБЫТИЯ ═══ */
 let deb;
 $('#searchInput').addEventListener('input',e=>{ clearTimeout(deb); deb=setTimeout(()=>{ state.q=e.target.value; renderGrid(); },130); });
-$('#filtersToggle').addEventListener('click',()=>{
-  const open=$('#toolbar').classList.toggle('open');
-  $('#filtersToggle').setAttribute('aria-expanded',open);
-});
+$('#filtersToggle').addEventListener('click',()=>{ const o=$('#toolbar').classList.toggle('open'); $('#filtersToggle').setAttribute('aria-expanded',o); });
 function resetAll(){ state.q=''; state.func='all'; state.access=null; state.pay=null; state.place=null; $('#searchInput').value=''; renderFuncChips(); renderFilterChips(); renderGrid(); }
 $('#resetBtn').addEventListener('click',resetAll);
 $('#clearBtn').addEventListener('click',resetAll);
 document.addEventListener('keydown',e=>{
   if(e.key==='/' && document.activeElement!==$('#searchInput')){ e.preventDefault(); $('#searchInput').focus(); }
-  if(e.key==='Escape' && document.activeElement===$('#searchInput')){ $('#searchInput').blur(); }
+  if(e.key==='Escape'){ closeAll(); if(document.activeElement===$('#searchInput')) $('#searchInput').blur(); }
+});
+
+let resizeT;
+let wasMobile = mqMobile.matches;
+window.addEventListener('resize',()=>{
+  clearTimeout(resizeT);
+  resizeT = setTimeout(()=>{
+    const nowMobile = mqMobile.matches;
+    if(nowMobile !== wasMobile){ closeAll(); if(expander&&expander.parentNode) expander.parentNode.removeChild(expander); wasMobile = nowMobile; return; }
+    if(!nowMobile && activeIdx!==null && M[activeIdx]){ openDesktop(activeIdx); }
+  },140);
 });
 
 const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io2.unobserve(e.target);} }),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>io2.observe(el));
 
-/* ═══════════ СТАРТ ═══════════ */
+/* ═══ СТАРТ ═══ */
 fetch('models.json')
-  .then(response => {
-    if (!response.ok) throw new Error('HTTP ' + response.status);
-    return response.json();
-  })
-  .then(data => {
-    M = Array.isArray(data) ? data : [];
+  .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(data=>{
+    M = Array.isArray(data)?data:[];
     $('#totalModels').textContent = M.length;
     $('#totalModelsWord').textContent = plural(M.length);
     $('#footModels').textContent = M.length;
     $('#footModelsWord').textContent = plural(M.length);
-    renderFuncChips();
-    renderFilterChips();
-    renderGrid();
+    renderFuncChips(); renderFilterChips(); renderGrid();
   })
-  .catch(err => {
-    console.error("Ошибка загрузки данных:", err);
-    grid.innerHTML = '<p style="text-align:center;padding:40px;color:var(--red)">Не удалось прочитать models.json. Проверьте, что файл существует и содержит корректный JSON.</p>';
-  });
+  .catch(err=>{ console.error('Ошибка загрузки данных:', err); grid.innerHTML = '<p style="text-align:center;padding:40px;color:var(--red)">Не удалось прочитать models.json. Проверьте, что файл существует и содержит корректный JSON.</p>'; });
 </script>
 </body>
 </html>
