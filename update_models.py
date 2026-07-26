@@ -1,8 +1,6 @@
 import requests
 import json
 
-# Модели, которые должны быть в каталоге всегда, даже если API их не отдаёт как бесплатные.
-# Скрипт допишет их поверх данных из OpenRouter и не даст им исчезнуть при автообновлении.
 MANUAL = [
     {
         "n": "Kimi K2 (free)",
@@ -10,7 +8,7 @@ MANUAL = [
         "c": "chat",
         "pop": 88,
         "ctx": "128K",
-        "tags": ["ru", "limited", "online"],
+        "tags": ["ru", "free", "online"],
         "d": "Открытая MoE-модель Moonshot AI: 1 трлн параметров, 32B активных. Сильна в программировании, агентных задачах и работе с инструментами, хорошо держит длинный контекст.",
         "f": "Бесплатно через OpenRouter (moonshotai/kimi-k2:free) — без привязки карты, с дневными лимитами",
         "u": "https://openrouter.ai/models/moonshotai/kimi-k2:free",
@@ -25,6 +23,16 @@ PROVIDER_MAP = {
     'huggingface': 'Hugging Face', 'nvidia': 'NVIDIA', 'perplexity': 'Perplexity',
     'openrouter': 'OpenRouter', 'moonshotai': 'Moonshot AI'
 }
+
+# Точные метки для провайдеров, про которых известно наверняка.
+# Всё остальное получает DEFAULT_TAGS.
+PROVIDER_TAGS = {
+    'Alibaba': ["ru", "free", "online"],
+    'Moonshot AI': ["ru", "free", "online"],
+    'DeepSeek': ["ru", "free", "online"],
+    'Mistral': ["ru", "free", "online"]
+}
+DEFAULT_TAGS = ["ru", "limited", "online"]
 
 def is_free(m):
     pricing = m.get('pricing', {})
@@ -48,6 +56,7 @@ def main():
         model_id = m.get('id', '')
         org_slug = model_id.split('/')[0] if '/' in model_id else 'openrouter'
         provider = PROVIDER_MAP.get(org_slug, org_slug.replace('-', ' ').title())
+        tags = PROVIDER_TAGS.get(provider, DEFAULT_TAGS)
         desc = m.get('description', 'Бесплатная модель, доступная через агрегатор OpenRouter.')
         if len(desc) > 180:
             desc = desc[:177] + '...'
@@ -57,14 +66,13 @@ def main():
             "c": "chat",
             "pop": 50,
             "ctx": str(m.get('context_length', 'N/A')),
-            "tags": ["ru", "limited", "online"],
+            "tags": tags,
             "d": desc,
             "f": "Бесплатно через OpenRouter (без привязки карты)",
             "u": f"https://openrouter.ai/models/{model_id}",
             "doc": "https://openrouter.ai/docs"
         })
 
-    # Дописываем ручной список, пропуская дубли по названию
     existing = {item['n'] for item in free_models}
     for item in MANUAL:
         if item['n'] not in existing:
