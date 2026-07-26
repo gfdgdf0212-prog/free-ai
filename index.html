@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>НейроРадар — живой реестр бесплатных моделей ИИ</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<title>Бесплатные нейросети и Free AI модели 2026 — каталог НейроРадар</title>
+<meta name="description" content="Актуальный каталог бесплатных нейросетей и AI-моделей: ChatGPT, Gemini, Claude, DeepSeek. Условия бесплатного доступа, лимиты и прямые ссылки. Обновлено в 2026 году.">
+<meta name="keywords" content="бесплатные нейросети, free ai, бесплатные нейронки, каталог ии, free ai models, нейросети онлайн бесплатно, openrouter, deepseek, llama">
+<meta property="og:title" content="Бесплатные нейросети и Free AI модели 2026">
+<meta property="og:description" content="Живой справочник бесплатных ИИ-моделей с прямыми ссылками и условиями доступа.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 14 10 22 12 14 14 12 22 10 14 2 12 10 10Z' fill='%2335e0c2'/><circle cx='18.5' cy='5.5' r='1.6' fill='%23ffb454'/></svg>">
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/cyrillic-500.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/cyrillic-700.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/cyrillic-900.css" rel="stylesheet">
@@ -22,107 +27,39 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg); color:var(--txt); font-family:var(--body);
-  font-size:15px; line-height:1.55; overflow-x:hidden; min-height:100vh;
-}
-body::before{ /* сетка */
-  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image:linear-gradient(rgba(110,150,210,.045) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(110,150,210,.045) 1px,transparent 1px);
-  background-size:52px 52px;
-  mask-image:radial-gradient(ellipse 90% 80% at 50% 0%,#000 30%,transparent 100%);
-}
+body{background:var(--bg);color:var(--txt);font-family:var(--body);font-size:15px;line-height:1.55;overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(110,150,210,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(110,150,210,.045) 1px,transparent 1px);
+  background-size:52px 52px;mask-image:radial-gradient(ellipse 90% 80% at 50% 0%,#000 30%,transparent 100%)}
 .glow{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
 .g1{width:560px;height:560px;top:-180px;left:-140px;background:var(--teal);opacity:.10;animation:drift 22s ease-in-out infinite alternate}
 .g2{width:640px;height:640px;bottom:-260px;right:-180px;background:var(--amber);opacity:.08;animation:drift 26s ease-in-out infinite alternate-reverse}
 .g3{width:420px;height:420px;top:40%;left:-200px;background:var(--blue);opacity:.07;animation:drift 30s ease-in-out infinite alternate}
 @keyframes drift{to{transform:translate(60px,40px) scale(1.12)}}
 .scanline{position:fixed;left:0;right:0;height:140px;top:-160px;z-index:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent,rgba(53,224,194,.05),transparent);
-  animation:scan 11s linear infinite}
+  background:linear-gradient(180deg,transparent,rgba(53,224,194,.05),transparent);animation:scan 11s linear infinite}
 @keyframes scan{to{transform:translateY(calc(100vh + 320px))}}
-
-/* ── статус-бар ── */
-.statusbar{
-  position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:16px;
-  padding:9px 26px;border-bottom:1px solid var(--line);background:rgba(6,10,19,.9);
-  font-family:var(--mono);font-size:11.5px;color:var(--mut);letter-spacing:.4px;
-}
-.sb-left,.sb-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.sb-right{gap:18px}
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;box-shadow:0 0 10px var(--teal);animation:pulse 1.6s infinite}
-.live-dot.small{width:6px;height:6px}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
-.live-tag-txt{color:var(--teal);font-weight:700;letter-spacing:2px}
-.sb-right b{color:var(--txt)}
-.syncbar{width:72px;height:4px;background:var(--line);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:-2px;margin-left:7px}
-.syncbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width 1.7s cubic-bezier(.3,.8,.3,1)}
 
 main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 
-/* ── мастхед ── */
-.masthead{display:grid;grid-template-columns:1.35fr .85fr;gap:44px;align-items:center;padding:58px 0 40px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--mut);text-transform:uppercase;margin-bottom:20px}
-.brand svg{width:26px;height:26px}
-.brand b{color:var(--teal);font-weight:700}
-.eyebrow{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
-h1{font-family:var(--disp);font-weight:900;font-size:clamp(29px,4.4vw,54px);line-height:1.12;letter-spacing:-.5px;margin-bottom:20px}
-h1 em{font-style:normal;color:var(--amber);position:relative;white-space:nowrap}
-h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;background:var(--amber);opacity:.45;border-radius:2px}
-.lede{color:var(--mut);font-size:16.5px;max-width:600px;margin-bottom:30px}
-.lede b{color:var(--txt);font-weight:600}
-.stats{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel2),var(--panel));overflow:hidden;width:fit-content}
-.stat{padding:16px 26px;border-right:1px solid var(--line);min-width:130px}
-.stat:last-child{border-right:none}
-.stat b{display:block;font-family:var(--disp);font-weight:700;font-size:28px;color:var(--teal);line-height:1.1}
-.stat:nth-child(2) b{color:var(--amber)} .stat:nth-child(3) b{color:var(--blue)} .stat:nth-child(4) b{color:#ff8fa3}
-.stat span{font-size:11.5px;color:var(--dim);letter-spacing:.4px;text-transform:uppercase;font-family:var(--mono)}
-.stat.bump b{animation:bump .5s}
-@keyframes bump{40%{transform:scale(1.22)}}
+/* компактный заголовок */
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;padding:32px 0 18px}
+.tb-left{display:flex;align-items:center;gap:15px}
+.ico{width:42px;height:42px;flex:none;display:grid;place-items:center;border:1px solid var(--line2);border-radius:12px;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));box-shadow:0 0 22px rgba(53,224,194,.12)}
+.ico svg{width:22px;height:22px}
+.topbar h1{font-family:var(--disp);font-weight:700;font-size:clamp(20px,3vw,28px);line-height:1.15;letter-spacing:-.3px}
+.tb-sub{color:var(--mut);font-size:13px;margin-top:3px}
+.tb-right{text-align:right;font-family:var(--mono)}
+.tb-right b{display:block;font-family:var(--disp);font-weight:700;font-size:24px;color:var(--teal);line-height:1}
+.tb-right span{font-size:10.5px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
 
-/* радар */
-.mh-right{display:flex;flex-direction:column;align-items:center;gap:12px}
-.radar{position:relative;width:min(340px,72vw);aspect-ratio:1;border-radius:50%;
-  border:1px solid rgba(110,160,225,.3);
-  background:
-    radial-gradient(circle,rgba(53,224,194,.08),transparent 72%),
-    repeating-radial-gradient(circle at 50% 50%,rgba(120,165,225,.16) 0 1px,transparent 1px 25%),
-    linear-gradient(rgba(120,165,225,.14) 1px,transparent 1px) 50% 50%/100% 50%,
-    linear-gradient(90deg,rgba(120,165,225,.14) 1px,transparent 1px) 50% 50%/50% 100%,
-    #081020;
-  box-shadow:0 0 60px rgba(53,224,194,.10),inset 0 0 60px rgba(8,16,32,.9);
-}
-.radar .sweep{position:absolute;inset:0;border-radius:50%;overflow:hidden;
-  background:conic-gradient(from 0deg,rgba(53,224,194,.5),rgba(53,224,194,.06) 70deg,transparent 90deg);
-  animation:spin 4.6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.radar .core{position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--teal);box-shadow:0 0 14px var(--teal)}
-.blip{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c);animation:ping 3.4s infinite;animation-delay:var(--dl)}
-.blip::after{content:'';position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--c);animation:ring 3.4s infinite;animation-delay:var(--dl);opacity:0}
-@keyframes ping{0%,15%{opacity:0;transform:scale(.3)}25%{opacity:1;transform:scale(1)}80%{opacity:.85}100%{opacity:0}}
-@keyframes ring{0%,20%{opacity:0;transform:scale(.4)}30%{opacity:.8}100%{opacity:0;transform:scale(2.4)}}
-.radar-cap{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:2px;text-transform:uppercase}
-.radar-cap b{color:var(--teal)}
-
-/* ── тикер ── */
-.ticker{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(10,17,31,.7);overflow:hidden;padding:11px 0;margin-bottom:34px}
-.ticker-track{display:inline-flex;white-space:nowrap;animation:tick 80s linear infinite;will-change:transform}
-.ticker:hover .ticker-track{animation-play-state:paused}
-@keyframes tick{to{transform:translateX(-50%)}}
-.tk-group{display:inline-flex;align-items:center}
-.tk{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--mut);margin-right:44px}
-.tk i{width:7px;height:7px;border-radius:50%;flex:none}
-.tk b{color:var(--txt);font-weight:700}
-.tk .fr{color:var(--teal)}
-.tk-sep{color:var(--dim);margin-right:44px}
-
-/* ── тулбар ── */
+/* тулбар */
 .toolbar{position:sticky;top:0;z-index:20;background:rgba(6,10,19,.93);backdrop-filter:blur(10px);
-  border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:26px;
+  border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:24px;
   display:flex;flex-direction:column;gap:12px;box-shadow:0 14px 40px -20px rgba(0,0,0,.8)}
 .tb-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.search{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;transition:.2s}
+.search{flex:1;min-width:220px;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;transition:.2s}
 .search:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(53,224,194,.14)}
 .search svg{flex:none;stroke:var(--dim)}
 .search input{flex:1;background:none;border:none;outline:none;color:var(--txt);font-family:var(--body);font-size:14.5px;min-width:0}
@@ -131,7 +68,6 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
 .sort{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
 .sort select{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:var(--body);font-size:13.5px;cursor:pointer;outline:none;transition:.2s}
 .sort select:hover{border-color:var(--line2)}
-/* кнопка «Фильтры» — видна только на мобильных */
 .filters-toggle{display:none;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);color:var(--mut);
   border-radius:10px;padding:10px 14px;font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;transition:.2s;white-space:nowrap}
 .filters-toggle:hover{border-color:var(--teal);color:var(--txt)}
@@ -140,24 +76,24 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
 .filters-toggle .chev{transition:transform .3s;font-size:10px;color:var(--dim)}
 .toolbar.open .filters-toggle{border-color:var(--teal);color:var(--txt)}
 .toolbar.open .filters-toggle .chev{transform:rotate(180deg);color:var(--teal)}
-/* обёртка блоков фильтров: на десктопе «прозрачна» для флекса тулбара */
 .filters-body{display:contents}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-8px)}}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line);color:var(--mut);
   border-radius:999px;padding:6px 14px;font-family:var(--body);font-size:12.5px;font-weight:500;cursor:pointer;transition:.18s;user-select:none}
-.chip i{width:8px;height:8px;border-radius:50%;background:var(--cc,var(--teal));flex:none}
 .chip:hover{transform:translateY(-1px);border-color:var(--cc,var(--teal));color:var(--txt)}
 .chip.on{background:color-mix(in srgb,var(--cc,var(--teal)) 16%,var(--panel));border-color:var(--cc,var(--teal));color:var(--txt)}
-.chips-label{font-family:var(--mono);font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;min-width:88px}
+.chips-label{font-family:var(--mono);font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;min-width:78px}
 
-/* ── раскладка ── */
-.layout{display:grid;grid-template-columns:1fr 312px;gap:28px;align-items:start;padding-bottom:70px}
-.results-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+/* раскладка */
+.layout{padding-bottom:70px}
+.results-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
 .results-head h2{font-family:var(--disp);font-weight:700;font-size:19px}
 .results-head h2 b{color:var(--teal)}
-.updated{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
-.updated b{color:var(--amber)}
+.clearbtn{display:none;font-family:var(--mono);font-size:11px;color:var(--amber);background:none;border:1px solid rgba(255,180,84,.4);
+  border-radius:7px;padding:5px 11px;cursor:pointer;transition:.2s;letter-spacing:.3px}
+.clearbtn.show{display:inline-block}
+.clearbtn:hover{background:rgba(255,180,84,.12)}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:16px}
 .card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;gap:11px;
@@ -165,13 +101,7 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
   border-radius:14px;padding:18px 18px 13px;opacity:0;transform:translateY(16px);
   transition:opacity .5s,transform .45s,border-color .25s,box-shadow .25s}
 .card.in{opacity:1;transform:none}
-.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--pc) 55%,var(--line));
-  box-shadow:0 18px 40px -16px color-mix(in srgb,var(--pc) 40%,transparent)}
-.card.flash{border-color:var(--pc);box-shadow:0 0 0 1px var(--pc),0 12px 34px -12px var(--pc)}
-.live-tag{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;color:var(--teal);
-  border:1px solid rgba(53,224,194,.5);border-radius:5px;padding:3px 8px;background:rgba(53,224,194,.1);
-  opacity:0;transform:translateY(-4px);transition:.3s;text-transform:uppercase}
-.card.flash .live-tag{opacity:1;transform:none;animation:pulse 1s infinite}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--pc) 55%,var(--line));box-shadow:0 18px 40px -16px color-mix(in srgb,var(--pc) 40%,transparent)}
 .card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .prov{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--pc);text-transform:uppercase}
 .prov i{width:8px;height:8px;border-radius:50%;background:var(--pc);box-shadow:0 0 8px var(--pc)}
@@ -181,9 +111,16 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
 .desc{color:var(--mut);font-size:13.5px;flex:1}
 .free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:9px;padding:9px 11px;font-size:12.5px;color:#c9f5ea;line-height:1.45}
 .free b{color:var(--teal);font-weight:600}
-.meta{display:flex;gap:8px;flex-wrap:wrap}
-.meta span{font-family:var(--mono);font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:4px 9px;letter-spacing:.3px}
-.meta b{color:var(--txt)}
+.meta{display:flex;gap:7px;flex-wrap:wrap}
+.meta span{font-family:var(--mono);font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:4px 9px;letter-spacing:.3px;transition:.2s}
+.meta span.ctx b{color:var(--txt)}
+.m-ru{color:#57d9a3;border-color:rgba(87,217,163,.4)}
+.m-vpn{color:var(--amber);border-color:rgba(255,180,84,.4)}
+.m-free{color:var(--teal);border-color:rgba(53,224,194,.4)}
+.m-limited{color:#ffcf8a;border-color:rgba(255,180,84,.32)}
+.m-local{color:var(--blue);border-color:rgba(102,157,246,.4)}
+.m-online{color:var(--mut);border-color:var(--line2)}
+.meta span.hit{color:var(--txt)!important;border-color:var(--teal)!important;background:rgba(53,224,194,.14);box-shadow:0 0 0 1px rgba(53,224,194,.25)}
 .links{display:flex;gap:9px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:12.5px;font-weight:600;border-radius:9px;padding:8px 14px;transition:.2s}
 .btn .arr{transition:transform .2s;font-size:12px}
@@ -192,43 +129,19 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
 .btn.main:hover{background:color-mix(in srgb,var(--pc) 32%,var(--panel));transform:translateY(-1px)}
 .btn.ghost{border:1px solid var(--line);color:var(--mut)}
 .btn.ghost:hover{border-color:var(--line2);color:var(--txt);transform:translateY(-1px)}
-.card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:9px;margin-top:2px;
-  font-family:var(--mono);font-size:10.5px;color:var(--dim)}
-.card-foot .ok{color:#57d9a3}
+.card-foot{display:flex;justify-content:flex-end;align-items:center;border-top:1px solid var(--line);padding-top:9px;margin-top:2px;font-family:var(--mono);font-size:10.5px;color:var(--dim)}
 .pop-meter{display:flex;align-items:center;gap:6px}
 .pop-meter u{width:44px;height:3px;background:var(--line);border-radius:2px;overflow:hidden;display:block;text-decoration:none}
 .pop-meter u i{display:block;height:100%;background:var(--pc);width:calc(var(--pw)*1%)}
 
 .empty{display:none;text-align:center;padding:70px 20px;border:1px dashed var(--line2);border-radius:16px;color:var(--mut)}
 .empty.show{display:block}
-.empty .big{font-size:42px;margin-bottom:14px}
+.empty .big{margin:0 auto 16px;width:54px;height:54px;display:grid;place-items:center;border:1px solid var(--line2);border-radius:14px;background:var(--panel)}
+.empty .big svg{width:26px;height:26px;stroke:var(--dim)}
 .empty button{margin-top:18px;background:var(--teal);color:#06251e;border:none;border-radius:9px;padding:10px 22px;font-family:var(--body);font-weight:600;font-size:13.5px;cursor:pointer;transition:.2s}
 .empty button:hover{transform:translateY(-2px);box-shadow:0 8px 22px -8px var(--teal)}
 
-/* ── правая колонка ── */
-.rail{display:flex;flex-direction:column;gap:18px;position:sticky;top:150px}
-.rail-card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:18px}
-.rail-card h3{font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:.5px;display:flex;align-items:center;gap:9px;margin-bottom:14px;text-transform:uppercase}
-.lb-row{display:grid;grid-template-columns:104px 1fr 22px;align-items:center;gap:10px;width:100%;background:none;border:none;padding:6px 0;cursor:pointer;text-align:left;transition:.15s}
-.lb-row:hover .lb-name{color:var(--txt)}
-.lb-name{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:7px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;transition:.15s}
-.lb-name i{width:7px;height:7px;border-radius:50%;flex:none}
-.lb-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-.lb-bar b{display:block;height:100%;width:0;border-radius:3px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
-.lb-count{font-family:var(--mono);font-size:11px;color:var(--dim);text-align:right}
-#feed{list-style:none;display:flex;flex-direction:column;gap:9px;max-height:300px;overflow:hidden}
-#feed li{display:flex;gap:10px;font-size:12px;color:var(--mut);line-height:1.45;animation:feedIn .45s cubic-bezier(.2,.9,.3,1.2)}
-@keyframes feedIn{from{opacity:0;transform:translateX(14px)}}
-#feed .ft{font-family:var(--mono);font-size:10.5px;color:var(--dim);flex:none;padding-top:1px}
-#feed i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:1px}
-#feed b{color:var(--txt);font-weight:600}
-.how{font-size:12.5px;color:var(--mut)}
-.how li{list-style:none;display:flex;gap:11px;margin-bottom:11px}
-.how li:last-child{margin-bottom:0}
-.how .num{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--amber);border:1px solid rgba(255,180,84,.4);border-radius:6px;padding:2px 7px;height:fit-content;flex:none}
-.how b{color:var(--txt)}
-
-/* ── футер ── */
+/* футер */
 footer{position:relative;z-index:2;border-top:1px solid var(--line);background:rgba(8,13,24,.85);margin-top:20px}
 .foot-in{max-width:1360px;margin:0 auto;padding:44px 26px 30px;display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:36px}
 .foot-in h4{font-family:var(--disp);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:13px}
@@ -239,34 +152,14 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
 .foot-bottom{border-top:1px solid var(--line);padding:16px 26px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.5px}
 .foot-bottom b{color:var(--teal)}
 
-/* toast */
-.toast{position:fixed;left:24px;bottom:24px;z-index:60;background:var(--panel2);border:1px solid var(--teal);border-radius:12px;
-  padding:13px 18px;font-size:13px;display:flex;align-items:center;gap:11px;box-shadow:0 16px 44px -12px rgba(53,224,194,.35);
-  transform:translateY(90px);opacity:0;transition:.4s cubic-bezier(.2,.9,.3,1.15);max-width:min(420px,86vw)}
-.toast.show{transform:none;opacity:1}
-.toast .live-dot{flex:none}
-
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .65s}
 .reveal.in{opacity:1;transform:none}
 
-@media (max-width:1080px){
-  .layout{grid-template-columns:1fr}
-  .rail{position:static;display:grid;grid-template-columns:1fr 1fr}
-  .rail .how-card{grid-column:1/-1}
-}
-@media (max-width:960px){
-  .masthead{grid-template-columns:1fr;padding-top:42px}
-  .mh-right{order:-1}
-  .radar{width:min(240px,64vw)}
-}
-/* ── мобильная адаптация тулбара: фильтры сворачиваются, чипы в одну прокручиваемую строку ── */
 @media (max-width:860px){
   .filters-toggle{display:inline-flex}
   .filters-body{display:none}
   .toolbar.open .filters-body{display:flex;flex-direction:column;gap:12px;animation:fadeDown .3s ease}
-  .chips{flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
-    scrollbar-width:none;padding:2px 2px 4px;
-    mask-image:linear-gradient(90deg,#000 94%,transparent)}
+  .chips{flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 2px 4px;mask-image:linear-gradient(90deg,#000 94%,transparent)}
   .chips::-webkit-scrollbar{display:none}
   .chip{flex:none}
   .chips-label{min-width:auto;flex:none}
@@ -275,19 +168,10 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
 }
 @media (max-width:640px){
   main{padding:0 16px}
-  .statusbar{padding:8px 16px}
-  .sb-src{display:none}
-  .rail{grid-template-columns:1fr}
-  .stat{min-width:0;flex:1;padding:13px 14px}
-  .stats{width:100%}
-  .foot-in{grid-template-columns:1fr;gap:26px}
   .search kbd{display:none}
-}
-@media (max-width:480px){
-  .stats{display:grid;grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
-  .lede{font-size:15px}
+  .tb-right{display:none}
+  .topbar{padding-top:24px}
+  .foot-in{grid-template-columns:1fr;gap:26px}
 }
 </style>
 </head>
@@ -296,154 +180,95 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
 <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
 <div class="scanline"></div>
 
-<!-- статус-бар -->
-<header class="statusbar">
-  <div class="sb-left">
-    <span style="display:flex;align-items:center;gap:8px"><span class="live-dot"></span><span class="live-tag-txt">LIVE</span></span>
-    <span>реестр онлайн</span>
-    <span>·</span>
-    <span>МСК <b id="mskTime">--:--:--</b></span>
-  </div>
-  <div class="sb-right">
-    <span class="sb-src">источников: <b id="srcCount">29</b></span>
-    <span>моделей: <b id="modelCountTop">0</b></span>
-    <span>синхронизация <b id="syncAgo">0 с</b> назад<span class="syncbar"><i id="syncFill"></i></span></span>
-  </div>
-</header>
-
 <main>
-  <!-- мастхед -->
-  <section class="masthead">
-    <div class="mh-left reveal">
-      <div class="brand">
-        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#35e0c2" stroke-width="1.6"/><circle cx="16" cy="16" r="8" stroke="#35e0c2" stroke-width="1.2" opacity=".55"/><path d="M16 16 L27 8" stroke="#ffb454" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.4" fill="#35e0c2"/><circle cx="10" cy="21" r="1.7" fill="#ffb454"/></svg>
-        НЕЙРО<b>РАДАР</b> · v2.7
-      </div>
-      <p class="eyebrow">● онлайн-мониторинг · воскресенье, 26 июля 2026</p>
-      <h1>Бесплатные модели <em>нейросетей</em> — на одном радаре</h1>
-      <p class="lede">Сканируем официальные страницы <b>OpenAI, Google, Anthropic, Meta, DeepSeek, Mistral, Яндекса, Сбера</b> и ещё двух десятков провайдеров. Каждая модель — с названием, условиями бесплатного доступа и прямой ссылкой.</p>
-      <div class="stats">
-        <div class="stat"><b data-count="42" id="statModels">0</b><span>моделей в реестре</span></div>
-        <div class="stat"><b data-count="29" id="statProv">0</b><span>провайдеров</span></div>
-        <div class="stat"><b data-count="5">0</b><span>категорий</span></div>
-        <div class="stat" id="checksWrap"><b data-count="131" id="checksToday">0</b><span>проверок сегодня</span></div>
+  <header class="topbar reveal">
+    <div class="tb-left">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" fill="#35e0c2"/><circle cx="18.5" cy="5.5" r="1.6" fill="#ffb454"/></svg></span>
+      <div>
+        <h1>Бесплатные нейросети</h1>
+        <p class="tb-sub">Справочник моделей с прямыми ссылками и условиями бесплатного доступа</p>
       </div>
     </div>
-    <div class="mh-right reveal">
-      <div class="radar" aria-hidden="true">
-        <div class="sweep"></div>
-        <span class="core"></span>
-        <span class="blip" style="--c:#10a37f;--dl:.2s;left:26%;top:30%"></span>
-        <span class="blip" style="--c:#669df6;--dl:1.1s;left:66%;top:22%"></span>
-        <span class="blip" style="--c:#ffb454;--dl:2s;left:74%;top:58%"></span>
-        <span class="blip" style="--c:#4d6bfe;--dl:.7s;left:40%;top:70%"></span>
-        <span class="blip" style="--c:#ff7000;--dl:1.6s;left:18%;top:58%"></span>
-        <span class="blip" style="--c:#ffd21e;--dl:2.6s;left:54%;top:42%"></span>
-        <span class="blip" style="--c:#fc3f1d;--dl:3s;left:58%;top:78%"></span>
-      </div>
-      <div class="radar-cap">R-360 // сканирование <b>29 источников</b></div>
-    </div>
-  </section>
+    <div class="tb-right"><b id="totalModels">0</b><span>моделей</span></div>
+  </header>
 
-  <!-- тикер -->
-  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
-
-  <!-- тулбар -->
   <section class="toolbar reveal" id="toolbar">
     <div class="tb-row">
       <label class="search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="searchInput" type="text" placeholder="Поиск: модель, провайдер, возможность…" autocomplete="off">
+        <input id="searchInput" type="text" placeholder="Поиск: модель, провайдер, возможность" autocomplete="off">
         <kbd>/</kbd>
       </label>
       <div class="sort">
         <span>Сортировка</span>
         <select id="sortSelect">
           <option value="pop">по популярности</option>
-          <option value="name">по названию (А–Я)</option>
+          <option value="name">по названию (А-Я)</option>
           <option value="prov">по провайдеру</option>
         </select>
       </div>
       <button class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersBody">
-        <span>⚙</span><span id="filtersLabel">Фильтры</span><span class="cnt" id="filtersCnt">0</span><span class="chev">▼</span>
+        <span id="filtersLabel">Фильтры</span><span class="cnt" id="filtersCnt">0</span><span class="chev">▼</span>
       </button>
     </div>
     <div class="filters-body" id="filtersBody">
       <div class="tb-row">
-        <span class="chips-label">Категория</span>
-        <div class="chips" id="catChips"></div>
+        <span class="chips-label">Доступ</span>
+        <div class="chips" id="accessChips"></div>
       </div>
       <div class="tb-row">
-        <span class="chips-label">Провайдер</span>
-        <div class="chips" id="provChips"></div>
+        <span class="chips-label">Оплата</span>
+        <div class="chips" id="payChips"></div>
+      </div>
+      <div class="tb-row">
+        <span class="chips-label">Запуск</span>
+        <div class="chips" id="placeChips"></div>
       </div>
     </div>
   </section>
 
-  <!-- основная раскладка -->
   <section class="layout">
     <div class="results">
       <div class="results-head reveal">
         <h2>Найдено: <b id="resultCount">0</b> <span id="resultWord" style="font-size:13px;color:var(--dim);font-family:var(--body);font-weight:400">моделей</span></h2>
-        <span class="updated">последнее обновление: <b id="updatedAt">—</b></span>
+        <button class="clearbtn" id="clearBtn">сбросить фильтры</button>
       </div>
       <div class="grid" id="grid"></div>
       <div class="empty" id="emptyState">
-        <div class="big">🛰️</div>
-        <p>По запросу ничего не найдено.<br>Попробуйте сбросить фильтры — радар видит всё.</p>
+        <div class="big"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <p>Под выбранные фильтры ничего не подошло.<br>Попробуйте убрать часть условий.</p>
         <button id="resetBtn">Сбросить фильтры</button>
       </div>
     </div>
-
-    <aside class="rail">
-      <div class="rail-card reveal">
-        <h3>Топ провайдеров</h3>
-        <div id="leaderboard"></div>
-      </div>
-      <div class="rail-card reveal">
-        <h3>Лента проверок <span class="live-dot small"></span></h3>
-        <ul id="feed"></ul>
-      </div>
-      <div class="rail-card how-card reveal">
-        <h3>Как это работает</h3>
-        <ul class="how">
-          <li><span class="num">01</span><span><b>Обход источников.</b> Парсер каждые 30 секунд опрашивает официальные страницы провайдеров и документацию API.</span></li>
-          <li><span class="num">02</span><span><b>Разбор условий.</b> Извлекаются лимиты бесплатных тарифов, контекст и статус доступа.</span></li>
-          <li><span class="num">03</span><span><b>Публикация.</b> Карточка получает ссылку на модель и отметку «проверено».</span></li>
-        </ul>
-      </div>
-    </aside>
   </section>
 </main>
 
 <footer>
   <div class="foot-in">
     <div>
-      <h4>О проекте</h4>
-      <p>НейроРадар — независимый агрегатор бесплатных моделей ИИ. Мы не храним ключи и не перепродаём доступ: только названия, условия free-тарифов и прямые ссылки на официальные сервисы.</p>
+      <h4>О справочнике</h4>
+      <p>Независимый каталог бесплатных нейросетей. Здесь нет ключей и перепродажи доступа — только названия моделей, условия бесплатных тарифов и прямые ссылки на официальные сервисы.</p>
     </div>
     <div>
       <h4>Ключевые источники</h4>
       <ul>
-        <li><a href="https://openrouter.ai/collections/free-models" target="_blank" rel="noopener">OpenRouter · Free Models ↗</a></li>
-        <li><a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio ↗</a></li>
-        <li><a href="https://console.groq.com/docs/models" target="_blank" rel="noopener">Groq · Models ↗</a></li>
-        <li><a href="https://developers.cloudflare.com/workers-ai" target="_blank" rel="noopener">Cloudflare Workers AI ↗</a></li>
-        <li><a href="https://huggingface.co/models?inference=free" target="_blank" rel="noopener">Hugging Face · Free Inference ↗</a></li>
+        <li><a href="https://openrouter.ai/collections/free-models" target="_blank" rel="noopener">OpenRouter — Free Models</a></li>
+        <li><a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a></li>
+        <li><a href="https://console.groq.com/docs/models" target="_blank" rel="noopener">Groq — Models</a></li>
+        <li><a href="https://developers.cloudflare.com/workers-ai" target="_blank" rel="noopener">Cloudflare Workers AI</a></li>
+        <li><a href="https://huggingface.co/models?inference=free" target="_blank" rel="noopener">Hugging Face — Free Inference</a></li>
       </ul>
     </div>
     <div>
       <h4>Дисклеймер</h4>
-      <p>Лимиты бесплатных тарифов меняются без предупреждения — финальные условия всегда на официальном сайте провайдера. Последний полный обход источников: <b style="color:var(--txt)">26.07.2026, 09:00 МСК</b>.</p>
+      <p>Лимиты бесплатных тарифов и доступность из вашего региона меняются без предупреждения — финальные условия всегда на официальном сайте провайдера. Метки о доступе и способе запуска справочные и зависят от провайдера и региона.</p>
     </div>
   </div>
-  <div class="foot-bottom">© 2026 <b>НЕЙРОРАДАР</b> · данные носят справочный характер · 42 модели · 29 провайдеров · обновляется в реальном времени</div>
+  <div class="foot-bottom">© 2026 · данные носят справочный характер · <b id="footModels">42</b> модели</div>
 </footer>
 
-<div class="toast" id="toast"><span class="live-dot"></span><span id="toastText"></span></div>
-
 <script>
-/* ═══════════ ДАННЫЕ РЕЕСТРА ═══════════ */
+/* ═══════════ ДАННЫЕ ═══════════ */
 const PC = {
   'OpenAI':'#10a37f','Anthropic':'#d97757','Google':'#669df6','Meta':'#0082fb','xAI':'#aeb8c6',
   'DeepSeek':'#4d6bfe','Mistral':'#ff7000','Яндекс':'#f5413d','Сбер':'#21a038','Groq':'#ff7a45',
@@ -453,76 +278,38 @@ const PC = {
   'Pika':'#ffb86b','ElevenLabs':'#4ade80','Suno':'#ff7096','GitHub':'#a371f7','Windsurf':'#7dd3fc','Cursor':'#93c5fd'
 };
 const CATS = {
-  chat:{label:'Текст и чат', icon:'💬'},
-  image:{label:'Изображения', icon:'🎨'},
-  video:{label:'Видео', icon:'🎬'},
-  audio:{label:'Аудио', icon:'🎧'},
-  code:{label:'Код', icon:'⌨️'}
+  chat:{label:'Текст и чат'}, image:{label:'Изображения'},
+  video:{label:'Видео'}, audio:{label:'Аудио'}, code:{label:'Код'}
 };
-const M = [
- {n:'GPT-5.5 Instant',p:'OpenAI',c:'chat',pop:100,ctx:'400K',d:'Флагман OpenAI: рассуждение, зрение и голос. Доступна каждому бесплатно — лимит сообщений в 5-часовом окне, далее автоматический переход на GPT-5 mini.',f:'Free-тариф ChatGPT: ~10 сообщений GPT-5.5 каждые 5 часов',u:'https://chatgpt.com',doc:'https://platform.openai.com/docs'},
- {n:'GPT-5 mini',p:'OpenAI',c:'chat',pop:88,ctx:'400K',d:'Компактная и быстрая версия GPT-5 для повседневных задач: тексты, конспекты, простой код, ответы на вопросы.',f:'Бесплатно в ChatGPT — модель подхватывается после исчерпания лимита флагмана',u:'https://chatgpt.com',doc:'https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq'},
- {n:'Claude Sonnet 4.5',p:'Anthropic',c:'chat',pop:97,ctx:'200K',d:'Топовая модель Anthropic для сложного рассуждения, агентных сценариев и работы с кодом. Одна из лучших в программировании.',f:'Бесплатно на claude.ai — лимит сообщений, обновляется каждые несколько часов',u:'https://claude.ai',doc:'https://docs.anthropic.com'},
- {n:'Gemini 3 Pro',p:'Google',c:'chat',pop:95,ctx:'1M',d:'Новый флагман Google: мультимодальность, режим глубокого рассуждения Deep Think, нативная работа с аудио и видео.',f:'Ограниченный бесплатный доступ в приложении Gemini',u:'https://gemini.google.com',doc:'https://ai.google.dev/gemini-api/docs'},
- {n:'Gemini 2.5 Flash',p:'Google',c:'chat',pop:93,ctx:'1M',d:'Лучший баланс скорости и качества. Мультимодальная, с мышлением — и с самым щедрым бесплатным API на рынке.',f:'AI Studio: бесплатный API, ~1 500 запросов в день без карты',u:'https://aistudio.google.com',doc:'https://ai.google.dev/gemini-api/docs/pricing'},
- {n:'Gemini 2.5 Pro',p:'Google',c:'chat',pop:90,ctx:'1M',d:'Флагманская модель Google 2.5-серии: миллион токенов контекста, глубокий анализ документов и кодовых баз.',f:'Бесплатный тариф в AI Studio с лимитом RPM',u:'https://aistudio.google.com',doc:'https://ai.google.dev/gemini-api/docs/models'},
- {n:'Gemini 2.5 Flash-Lite',p:'Google',c:'chat',pop:82,ctx:'1M',d:'Самая быстрая и дешёвая в линейке: создана для высокообъёмных задач — классификация, извлечение, массовые запросы.',f:'Самый щедрый free tier в линейке Gemini',u:'https://aistudio.google.com',doc:'https://ai.google.dev/gemini-api/docs/pricing'},
- {n:'Veo 3.1 Fast',p:'Google',c:'video',pop:84,d:'Видеогенератор Google со встроенным звуком: диалоги, эффекты, физика. Версия Fast доступна и на бесплатном тарифе.',f:'Лимитированные бесплатные генерации в приложении Gemini',u:'https://gemini.google.com',doc:'https://deepmind.google/models/veo/'},
- {n:'Llama 4 Maverick',p:'Meta',c:'chat',pop:86,ctx:'1M',d:'Открытая MoE-модель Meta: 400B параметров, 17B активных, мультимодальность. По тестам — уровень GPT-4o.',f:'Бесплатно в Meta AI + открытые веса для локального запуска',u:'https://www.meta.ai',doc:'https://llama.com'},
- {n:'Grok 4',p:'xAI',c:'chat',pop:83,ctx:'256K',d:'Флагман xAI: мощное рассуждение и доступ к данным социальной сети X в реальном времени.',f:'Бесплатно в X и на grok.com с лимитом сообщений',u:'https://grok.com',doc:'https://docs.x.ai'},
- {n:'DeepSeek-V3.1',p:'DeepSeek',c:'chat',pop:94,ctx:'128K',d:'Гибридная модель: переключается между обычным режимом и режимом рассуждения. Сильна в коде и математике.',f:'chat.deepseek.com — бесплатно без жёстких лимитов; новым пользователям API — грант',u:'https://chat.deepseek.com',doc:'https://platform.deepseek.com'},
- {n:'DeepSeek-R1',p:'DeepSeek',c:'chat',pop:91,ctx:'128K',d:'Открытая «думающая» модель уровня o1: пошаговое рассуждение для математики, логики и сложного кода.',f:'Бесплатно в чате DeepSeek, на OpenRouter и Groq',u:'https://chat.deepseek.com',doc:'https://platform.deepseek.com'},
- {n:'Mistral Small 3.1',p:'Mistral',c:'chat',pop:78,ctx:'128K',d:'Европейская альтернатива гигантам: 24B параметров, мультимодальность, отличная скорость.',f:'Le Chat — бесплатно; API — тариф Experimentation без карты',u:'https://chat.mistral.ai',doc:'https://docs.mistral.ai'},
- {n:'YandexGPT 5.1 Pro',p:'Яндекс',c:'chat',pop:80,ctx:'32K',d:'Одна из лучших моделей для русского языка: ответы на вопросы, саммари, деловые тексты. Живёт в Алисе.',f:'Бесплатно в Алисе и на ya.ru/ai; в Yandex Cloud — пробный грант',u:'https://ya.ru/ai/gpt',doc:'https://yandex.cloud/ru/services/yandexgpt'},
- {n:'GigaChat 2',p:'Сбер',c:'chat',pop:76,ctx:'8K',d:'Флагман Сбера: силён в русском языке, умеет генерировать картинки и работает с документами.',f:'Бесплатный тариф в веб-чате giga.chat и API для разработчиков',u:'https://giga.chat',doc:'https://developers.sber.ru/gigachat'},
- {n:'Llama 3.3 70B',p:'Groq',c:'chat',pop:87,ctx:'128K',d:'Открытая Llama 3.3 на чипах Groq LPU — один из самых быстрых инференсов в мире: сотни токенов в секунду.',f:'Бесплатный API Groq: щедрые дневные лимиты, без карты',u:'https://console.groq.com',doc:'https://console.groq.com/docs/models'},
- {n:'Llama 3.1 8B Instant',p:'Groq',c:'chat',pop:68,ctx:'128K',d:'Лёгкая молниеносная модель для чат-ботов, классификации и извлечения данных на больших потоках.',f:'Бесплатный API Groq',u:'https://console.groq.com',doc:'https://console.groq.com/docs/models'},
- {n:'Whisper Large V3',p:'Groq',c:'audio',pop:74,d:'Лучшее открытое распознавание речи: 99 языков, транскрипция и перевод почти в реальном времени.',f:'Бесплатная транскрипция через API Groq',u:'https://console.groq.com',doc:'https://console.groq.com/docs/models'},
- {n:'Llama 3.3 70B',p:'Cerebras',c:'chat',pop:72,ctx:'128K',d:'Llama 3.3 на wafer-scale процессоре Cerebras: до 2 100 токенов в секунду — быстрее любого GPU-кластера.',f:'Free tier в Cerebras Cloud',u:'https://cloud.cerebras.ai',doc:'https://inference-docs.cerebras.ai'},
- {n:'Llama 3.3 70B',p:'Cloudflare',c:'chat',pop:73,ctx:'128K',d:'Бесплатный инференс Llama 3.3 прямо на edge-сети Cloudflare — без биллинга и привязки карты.',f:'Workers AI: бесплатный тариф по нейронным запросам в день',u:'https://developers.cloudflare.com/workers-ai',doc:'https://developers.cloudflare.com/workers-ai/models/'},
- {n:'FLUX.1 Schnell',p:'Cloudflare',c:'image',pop:71,d:'Генерация изображений моделью FLUX через бесплатный API Workers AI — одна команда, и картинка готова.',f:'Бесплатные генерации в рамках тарифа Workers AI',u:'https://developers.cloudflare.com/workers-ai',doc:'https://developers.cloudflare.com/workers-ai/models/'},
- {n:'DeepSeek-R1 (free)',p:'OpenRouter',c:'chat',pop:81,ctx:'128K',d:'R1 по нулевой цене: OpenRouter субсидирует инференс популярных открытых моделей. Идеально для старта.',f:'20 запросов/мин, до 1 000 запросов в день — без карты',u:'https://openrouter.ai/models?max_price=0',doc:'https://openrouter.ai/collections/free-models'},
- {n:'Llama 3.3 70B (free)',p:'OpenRouter',c:'chat',pop:75,ctx:'128K',d:'Открытый флагман Meta через единый API OpenRouter — бесплатно и с привычным OpenAI-совместимым интерфейсом.',f:'Free tier OpenRouter: без оплаты и карты',u:'https://openrouter.ai/models?max_price=0',doc:'https://openrouter.ai/collections/free-models'},
- {n:'Qwen3 235B (free)',p:'OpenRouter',c:'chat',pop:77,ctx:'128K',d:'Открытый MoE-флагман Alibaba: 235B параметров, 119 языков, гибридное мышление. Бесплатно через OpenRouter.',f:'Free tier OpenRouter: без оплаты и карты',u:'https://openrouter.ai/models?max_price=0',doc:'https://openrouter.ai/collections/free-models'},
- {n:'Gemma 3 27B (free)',p:'OpenRouter',c:'chat',pop:66,ctx:'128K',d:'Открытая модель Google для исследований: мультимодальная, компактная и быстрая. Бесплатный доступ через OpenRouter.',f:'Free tier OpenRouter: без оплаты и карты',u:'https://openrouter.ai/models?max_price=0',doc:'https://openrouter.ai/collections/free-models'},
- {n:'Free Inference Hub',p:'Hugging Face',c:'chat',pop:70,d:'Бесплатный API-инференс сотен открытых моделей — Llama, Qwen, DeepSeek, Gemma — прямо из карточек на HF.',f:'Inference Providers: бесплатный тариф для всех зарегистрированных',u:'https://huggingface.co/models?inference=free',doc:'https://huggingface.co/docs/inference-providers'},
- {n:'FLUX.1 Schnell',p:'Black Forest Labs',c:'image',pop:83,d:'Быстрая открытая модель изображений от экс-команды Stable Diffusion: картинка за 4 шага генерации.',f:'Открытые веса — бесплатно локально; онлайн — на HF Spaces и Cloudflare',u:'https://bfl.ai',doc:'https://huggingface.co/black-forest-labs/FLUX.1-schnell'},
- {n:'Stable Diffusion 3.5 Large',p:'Stability AI',c:'image',pop:78,d:'Открытая классика генерации изображений: полный контроль, LoRA, ControlNet и никакого цензурного API.',f:'Открытые веса — бесплатно локально и на Hugging Face',u:'https://stability.ai',doc:'https://huggingface.co/stabilityai/Stable-Diffusion-3.5-Large'},
- {n:'Ideogram 3',p:'Ideogram',c:'image',pop:77,d:'Лучший рендер текста внутри изображений: постеры, логотипы, типографика без «кракозябр».',f:'Ежедневные бесплатные генерации без карты',u:'https://ideogram.ai'},
- {n:'Leonardo AI',p:'Leonardo AI',c:'image',pop:73,d:'Комбайн для креаторов: десятки стилей, realtime-холст, апскейл и консистентные персонажи.',f:'150 токенов ежедневно — примерно 30 изображений',u:'https://leonardo.ai'},
- {n:'Krea AI',p:'Krea',c:'image',pop:69,d:'Realtime-генерация «рисуешь — получаешь», апскейл и улучшение фото в одном холсте.',f:'Бесплатный тариф с ежедневным лимитом генераций',u:'https://krea.ai'},
- {n:'Kandinsky 3.1',p:'Сбер',c:'image',pop:67,d:'Открытая модель изображений Сбера: 37 стилей, отличное понимание запросов на русском.',f:'Бесплатно на FusionBrain; веса открыты',u:'https://fusionbrain.ai',doc:'https://huggingface.co/kandinsky-community'},
- {n:'Kling 2.1',p:'Kuaishou',c:'video',pop:79,d:'Один из сильнейших видеогенераторов: реалистичная физика, движение камеры, клипы до 10 секунд.',f:'Ежедневные бесплатные кредиты — около 6 видео',u:'https://klingai.com'},
- {n:'Luma Dream Machine',p:'Luma',c:'video',pop:74,d:'Кинематографичные 5-секундные ролики из текста и картинок, режимы Loop и Extend.',f:'Несколько бесплатных генераций в месяц',u:'https://lumalabs.ai/dream-machine'},
- {n:'Hailuo 02',p:'MiniMax',c:'video',pop:72,d:'Видеомодель MiniMax: выразительная динамика и стабильные персонажи, сильна в аниме-стилистике.',f:'Ежедневные бесплатные кредиты',u:'https://hailuoai.video'},
- {n:'Runway Gen-4',p:'Runway',c:'video',pop:70,d:'Профессиональный инструмент кинематографистов: консистентные герои, точный контроль сцены.',f:'Стартовые бесплатные кредиты при регистрации',u:'https://runwayml.com'},
- {n:'Pika 2.2',p:'Pika',c:'video',pop:66,d:'Лёгкий и дружелюбный видеогенератор: Pikaframes, апскейл и забавные спецэффекты Scene Ingredients.',f:'Ежедневные бесплатные кредиты',u:'https://pika.art'},
- {n:'ElevenLabs',p:'ElevenLabs',c:'audio',pop:82,d:'Эталонный синтез речи: 32 языка, клонирование голоса, дубляж и звуковые эффекты по тексту.',f:'10 000 символов в месяц, 3 своих голоса — бесплатно',u:'https://elevenlabs.io'},
- {n:'Suno',p:'Suno',c:'audio',pop:80,d:'Полноценные треки с вокалом по текстовому описанию — от идеи до готовой песни за минуту.',f:'50 кредитов ежедневно — около 10 треков',u:'https://suno.com'},
- {n:'GitHub Copilot Free',p:'GitHub',c:'code',pop:85,d:'Автодополнение кода и чат прямо в VS Code, JetBrains и на GitHub.com. Модели GPT и Claude на выбор.',f:'2 000 дополнений + 50 чат-сообщений в месяц бесплатно',u:'https://github.com/features/copilot',doc:'https://docs.github.com/copilot'},
- {n:'Windsurf',p:'Windsurf',c:'code',pop:73,d:'AI-редактор с агентом Cascade: сам читает кодовую базу, правит файлы и запускает команды в терминале.',f:'Бесплатный тариф с кредитами Cascade',u:'https://windsurf.com'},
- {n:'Cursor',p:'Cursor',c:'code',pop:76,d:'Самый популярный AI-редактор: Tab-дополнение, агентский режим и мультифайловое редактирование.',f:'Free tier: 2 000 дополнений и ограниченный агентский режим',u:'https://cursor.com'}
+/* теги фильтров по трём осям */
+const TAGMETA = {
+  ru:{cls:'m-ru', txt:'без VPN'}, vpn:{cls:'m-vpn', txt:'нужен VPN'},
+  free:{cls:'m-free', txt:'полностью бесплатно'}, limited:{cls:'m-limited', txt:'с лимитами'},
+  local:{cls:'m-local', txt:'локально'}, online:{cls:'m-online', txt:'онлайн'}
+};
+/* группы фильтров: внутри группы выбор одиночный (переключение) */
+const GROUPS = [
+  {key:'access', box:'#accessChips', items:[['ru','Доступны в РФ'],['vpn','Нужен VPN']]},
+  {key:'pay',    box:'#payChips',    items:[['free','Полностью бесплатные'],['limited','Бесплатные с лимитами']]},
+  {key:'place',  box:'#placeChips',  items:[['local','Локальные'],['online','Онлайн']]}
 ];
+const chipColor = t => (t==='ru'||t==='free')?'#57d9a3':(t==='vpn'||t==='limited')?'var(--amber)':t==='local'?'var(--blue)':'var(--mut)';
 
-/* ═══════════ СОСТОЯНИЕ ═══════════ */
-const state = { q:'', cat:'all', provs:new Set(), sort:'pop' };
-let lastSync = Date.now();
-let checksToday = 131;
-
+/* ═══════════ СОСТОЯНИЕ: по одной оси — одно значение (переключение) ═══════════ */
+const state = { q:'', access:null, pay:null, place:null, sort:'pop' };
 const $ = s => document.querySelector(s);
 const grid = $('#grid');
-const isMobile = () => window.matchMedia('(max-width:860px)').matches;
 
-/* ═══════════ РЕНДЕР КАРТОЧЕК ═══════════ */
 function plural(n){ const a=Math.abs(n)%100,b=a%10; if(a>10&&a<20)return'моделей'; if(b>1&&b<5)return'модели'; if(b===1)return'модель'; return'моделей'; }
 
 function filtered(){
   const q = state.q.trim().toLowerCase();
   let list = M.filter(m=>{
-    if(state.cat!=='all' && m.c!==state.cat) return false;
-    if(state.provs.size && !state.provs.has(m.p)) return false;
+    if(state.access && !m.tags.includes(state.access)) return false;
+    if(state.pay    && !m.tags.includes(state.pay))    return false;
+    if(state.place  && !m.tags.includes(state.place))  return false;
     if(q){
-      const hay=(m.n+' '+m.p+' '+m.d+' '+m.f+' '+CATS[m.c].label).toLowerCase();
+      const hay=(m.n+' '+m.p+' '+m.d+' '+m.f+' '+CATS[m.c].label+' '+m.tags.map(t=>TAGMETA[t].txt).join(' ')).toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
@@ -533,24 +320,29 @@ function filtered(){
   return list;
 }
 
+function activeCount(){ return (state.access?1:0)+(state.pay?1:0)+(state.place?1:0); }
+
 function cardHTML(m,i){
   const c=CATS[m.c], col=PC[m.p]||'#35e0c2';
-  return `<article class="card" style="--pc:${col};transition-delay:${(i%8)*40}ms" data-name="${m.n}">
-    <span class="live-tag">● live-проверка</span>
+  const badges = m.tags.map(t=>{
+    const tm=TAGMETA[t], hit=(state.access===t||state.pay===t||state.place===t)?' hit':'';
+    return `<span class="${tm.cls}${hit}">${tm.txt}</span>`;
+  }).join('');
+  const ctx = m.ctx ? `<span class="ctx">контекст <b>${m.ctx}</b></span>` : '';
+  return `<article class="card" style="--pc:${col};transition-delay:${(i%8)*40}ms">
     <div class="card-top">
       <span class="prov"><i></i>${m.p}</span>
-      <span class="cat">${c.icon} ${c.label}</span>
+      <span class="cat">${c.label}</span>
     </div>
-    <h3>${m.n}${m.pop>=90?'<span class="hot">🔥 топ</span>':''}</h3>
+    <h3>${m.n}${m.pop>=90?'<span class="hot">топ</span>':''}</h3>
     <p class="desc">${m.d}</p>
-    <div class="free"><b>🎁 Бесплатно:</b> ${m.f}</div>
-    ${m.ctx?`<div class="meta"><span>контекст <b>${m.ctx}</b></span><span>free tier <b>активен</b></span></div>`:'<div class="meta"><span>free tier <b>активен</b></span></div>'}
+    <div class="free"><b>Бесплатно:</b> ${m.f}</div>
+    <div class="meta">${ctx}${badges}</div>
     <div class="links">
       <a class="btn main" href="${m.u}" target="_blank" rel="noopener">Открыть модель <span class="arr">↗</span></a>
-      ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API / документация <span class="arr">↗</span></a>`:''}
+      ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="arr">↗</span></a>`:''}
     </div>
     <div class="card-foot">
-      <span class="ok">✓ проверено 26.07.2026</span>
       <span class="pop-meter">рейтинг <u><i style="--pw:${m.pop}"></i></u> ${m.pop}</span>
     </div>
   </article>`;
@@ -565,162 +357,72 @@ function renderGrid(){
   $('#resultCount').textContent = list.length;
   $('#resultWord').textContent = plural(list.length);
   $('#emptyState').classList.toggle('show', list.length===0);
+  $('#clearBtn').classList.toggle('show', activeCount()>0 || state.q.trim().length>0);
   updateFiltersBadge();
 }
 
-/* ═══════════ МОБИЛЬНЫЕ ФИЛЬТРЫ ═══════════ */
+/* чипы: одиночный выбор внутри группы */
+function renderFilterChips(){
+  GROUPS.forEach(g=>{
+    const box=$(g.box);
+    box.innerHTML = g.items.map(([t,l])=>{
+      const on = state[g.key]===t ? 'on' : '';
+      return `<button class="chip ${on}" data-group="${g.key}" data-tag="${t}" style="--cc:${chipColor(t)}">${l}</button>`;
+    }).join('');
+    box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
+      const t=ch.dataset.tag;
+      state[g.key] = (state[g.key]===t) ? null : t;   // повторный клик снимает выбор
+      renderFilterChips(); renderGrid();
+    });
+  });
+}
 function updateFiltersBadge(){
-  let n = (state.cat!=='all' ? 1 : 0) + state.provs.size;
-  const c = $('#filtersCnt');
-  c.textContent = n;
-  c.classList.toggle('show', n>0);
-  $('#filtersLabel').textContent = n>0 ? `Фильтры · активно: ${n}` : 'Фильтры';
-}
-$('#filtersToggle').addEventListener('click',()=>{
-  const tb = $('#toolbar');
-  const open = tb.classList.toggle('open');
-  $('#filtersToggle').setAttribute('aria-expanded', open);
-});
-
-/* ═══════════ ЧИПЫ ═══════════ */
-function renderCatChips(){
-  const box=$('#catChips');
-  const all=[['all','Все категории','✨'],...Object.entries(CATS).map(([k,v])=>[k,v.label,v.icon])];
-  box.innerHTML=all.map(([k,l,ic])=>`<button class="chip ${state.cat===k?'on':''}" data-cat="${k}" style="--cc:var(--teal)">${ic} ${l}</button>`).join('');
-  box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{ state.cat=ch.dataset.cat; renderCatChips(); renderGrid(); });
-}
-function renderProvChips(){
-  const provs=[...new Set(M.map(m=>m.p))].sort((a,b)=>a.localeCompare(b,'ru'));
-  const box=$('#provChips');
-  box.innerHTML=`<button class="chip ${state.provs.size===0?'on':''}" data-prov="" style="--cc:var(--amber)">⭕ Все провайдеры</button>`+
-    provs.map(p=>`<button class="chip ${state.provs.has(p)?'on':''}" data-prov="${p}" style="--cc:${PC[p]||'#35e0c2'}"><i></i>${p}</button>`).join('');
-  box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
-    const p=ch.dataset.prov;
-    if(!p) state.provs.clear();
-    else state.provs.has(p)?state.provs.delete(p):state.provs.add(p);
-    renderProvChips(); renderGrid();
-  });
-}
-
-/* ═══════════ ЛИДЕРБОРД ═══════════ */
-function renderLeaderboard(){
-  const counts={};
-  M.forEach(m=>counts[m.p]=(counts[m.p]||0)+1);
-  const top=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  const max=top[0][1];
-  const box=$('#leaderboard');
-  box.innerHTML=top.map(([p,c])=>`<button class="lb-row" data-prov="${p}" title="Фильтр по ${p}">
-    <span class="lb-name"><i style="background:${PC[p]||'#35e0c2'}"></i>${p}</span>
-    <span class="lb-bar"><b style="background:${PC[p]||'#35e0c2'}" data-w="${Math.round(c/max*100)}"></b></span>
-    <span class="lb-count">${c}</span></button>`).join('');
-  box.querySelectorAll('.lb-row').forEach(r=>r.onclick=()=>{
-    const p=r.dataset.prov;
-    state.provs = (state.provs.size===1&&state.provs.has(p)) ? new Set() : new Set([p]);
-    renderProvChips(); renderGrid();
-    if(isMobile()){
-      $('#toolbar').classList.add('open');
-      $('#filtersToggle').setAttribute('aria-expanded','true');
-    }
-    window.scrollTo({top:$('#toolbar').offsetTop-10,behavior:'smooth'});
-  });
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{
-    box.querySelectorAll('.lb-bar b').forEach(b=>b.style.width=b.dataset.w+'%');
-  }));
-}
-
-/* ═══════════ ТИКЕР ═══════════ */
-function renderTicker(){
-  const top=[...M].sort((a,b)=>b.pop-a.pop).slice(0,16);
-  const item=m=>`<span class="tk"><i style="background:${PC[m.p]}"></i><b>${m.n}</b>&nbsp;· ${m.p} — <span class="fr">бесплатно</span></span><span class="tk-sep">✦</span>`;
-  const html=top.map(item).join('');
-  $('#tickerTrack').innerHTML=`<span class="tk-group">${html}</span><span class="tk-group">${html}</span>`;
-}
-
-/* ═══════════ ЛЕНТА ПРОВЕРОК ═══════════ */
-const FEED_MSGS=['лимиты free tier подтверждены','страница модели отвечает · 200 OK','бесплатный доступ активен','изменений в тарифе не обнаружено','условия бесплатного доступа без изменений','API отвечает, задержка в норме'];
-const fmt=d=>d.toLocaleTimeString('ru-RU',{hour12:false});
-function pushFeed(m,ago=0){
-  const feed=$('#feed');
-  const t=new Date(Date.now()-ago*60000);
-  const li=document.createElement('li');
-  li.innerHTML=`<span class="ft">${fmt(t)}</span><span><i style="background:${PC[m.p]}"></i><b>${m.n}</b> — ${FEED_MSGS[Math.floor(Math.random()*FEED_MSGS.length)]}</span>`;
-  feed.prepend(li);
-  while(feed.children.length>8) feed.lastChild.remove();
-}
-function seedFeed(){ pushFeed(M[10],9); pushFeed(M[4],6); pushFeed(M[15],4); pushFeed(M[0],1); }
-
-/* ═══════════ СИНХРОНИЗАЦИЯ (real-time симуляция обхода) ═══════════ */
-const TOASTS=['Синхронизация завершена · все источники отвечают','Обход завершён · изменений в free tier не обнаружено','Синхронизация завершена · 42/42 моделей подтверждены','Источники опрошены · реестр актуален'];
-function showToast(txt){
-  $('#toastText').textContent=txt;
-  const t=$('#toast'); t.classList.add('show');
-  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),3400);
-}
-function runSync(){
-  const fill=$('#syncFill');
-  fill.style.transition='none'; fill.style.width='0';
-  requestAnimationFrame(()=>{ fill.style.transition='width 1.7s cubic-bezier(.3,.8,.3,1)'; fill.style.width='100%'; });
-  setTimeout(()=>{
-    lastSync=Date.now();
-    checksToday+=2+Math.floor(Math.random()*4);
-    const cw=$('#checksWrap');
-    $('#checksToday').textContent=checksToday;
-    cw.classList.remove('bump'); void cw.offsetWidth; cw.classList.add('bump');
-    $('#updatedAt').textContent=fmt(new Date());
-    const cards=[...grid.querySelectorAll('.card')];
-    for(let k=0;k<Math.min(3,cards.length);k++){
-      const el=cards[Math.floor(Math.random()*cards.length)];
-      el.classList.add('flash');
-      setTimeout(()=>el.classList.remove('flash'),2400);
-    }
-    for(let k=0;k<2;k++) pushFeed(M[Math.floor(Math.random()*M.length)]);
-    showToast(TOASTS[Math.floor(Math.random()*TOASTS.length)]);
-  },1800);
-}
-
-/* ═══════════ ЧАСЫ И СЧЁТЧИКИ ═══════════ */
-setInterval(()=>{
-  $('#mskTime').textContent=new Date().toLocaleTimeString('ru-RU',{timeZone:'Europe/Moscow',hour12:false});
-  $('#syncAgo').textContent=Math.max(0,Math.floor((Date.now()-lastSync)/1000))+' с';
-},1000);
-
-function countUp(el){
-  const target=+el.dataset.count, t0=performance.now(), dur=1300;
-  (function step(t){
-    const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3);
-    el.textContent=Math.round(target*e);
-    if(p<1) requestAnimationFrame(step);
-  })(t0);
+  const n=activeCount(), c=$('#filtersCnt');
+  c.textContent=n; c.classList.toggle('show',n>0);
+  $('#filtersLabel').textContent = n>0 ? `Фильтры · ${n}` : 'Фильтры';
 }
 
 /* ═══════════ СОБЫТИЯ ═══════════ */
 let deb;
-$('#searchInput').addEventListener('input',e=>{
-  clearTimeout(deb);
-  deb=setTimeout(()=>{ state.q=e.target.value; renderGrid(); },130);
-});
+$('#searchInput').addEventListener('input',e=>{ clearTimeout(deb); deb=setTimeout(()=>{ state.q=e.target.value; renderGrid(); },130); });
 $('#sortSelect').addEventListener('change',e=>{ state.sort=e.target.value; renderGrid(); });
-$('#resetBtn').addEventListener('click',()=>{
-  state.q=''; state.cat='all'; state.provs.clear(); $('#searchInput').value='';
-  renderCatChips(); renderProvChips(); renderGrid();
+$('#filtersToggle').addEventListener('click',()=>{
+  const open=$('#toolbar').classList.toggle('open');
+  $('#filtersToggle').setAttribute('aria-expanded',open);
 });
+function resetAll(){ state.q=''; state.access=null; state.pay=null; state.place=null; $('#searchInput').value=''; renderFilterChips(); renderGrid(); }
+$('#resetBtn').addEventListener('click',resetAll);
+$('#clearBtn').addEventListener('click',resetAll);
 document.addEventListener('keydown',e=>{
   if(e.key==='/' && document.activeElement!==$('#searchInput')){ e.preventDefault(); $('#searchInput').focus(); }
   if(e.key==='Escape' && document.activeElement===$('#searchInput')){ $('#searchInput').blur(); }
 });
 
-/* reveal для секций */
 const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io2.unobserve(e.target);} }),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>io2.observe(el));
 
 /* ═══════════ СТАРТ ═══════════ */
-$('#modelCountTop').textContent=M.length;
-$('#srcCount').textContent=Object.keys(PC).length;
-document.querySelectorAll('.stats b[data-count]').forEach(countUp);
-renderCatChips(); renderProvChips(); renderTicker(); renderLeaderboard(); renderGrid(); seedFeed();
-$('#updatedAt').textContent=fmt(new Date());
-setTimeout(runSync,4000);
-setInterval(runSync,26000);
+   let M = []; // Пока пустой, заполнится из файла
+
+   // Загружаем данные из JSON-файла
+   fetch('models.json')
+     .then(response => {
+       if (!response.ok) throw new Error('Не удалось загрузить models.json');
+       return response.json();
+     })
+     .then(data => {
+       M = data; // Сохраняем полученные данные
+       
+       // Инициализируем сайт ТОЛЬКО после успешной загрузки
+       $('#totalModels').textContent = M.length;
+       $('#footModels').textContent = M.length;
+       renderFilterChips(); 
+       renderGrid();
+     })
+     .catch(err => {
+       console.error("Ошибка загрузки данных:", err);
+       grid.innerHTML = '<p style="text-align:center; padding:40px; color:var(--red)">Ошибка загрузки списка моделей. Убедитесь, что файл models.json создан.</p>';
+     });
 </script>
 </body>
 </html>
