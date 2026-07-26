@@ -63,9 +63,6 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .search input{flex:1;background:none;border:none;outline:none;color:var(--txt);font-family:var(--body);font-size:14.5px;min-width:0}
 .search input::placeholder{color:var(--dim)}
 .search kbd{font-family:var(--mono);font-size:10px;color:var(--dim);border:1px solid var(--line2);border-radius:4px;padding:2px 6px}
-.sort{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
-.sort select{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:var(--body);font-size:13.5px;cursor:pointer;outline:none;transition:.2s}
-.sort select:hover{border-color:var(--line2)}
 .filters-toggle{display:none;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);color:var(--mut);
   border-radius:10px;padding:10px 14px;font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;transition:.2s;white-space:nowrap}
 .filters-toggle:hover{border-color:var(--teal);color:var(--txt)}
@@ -92,7 +89,6 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .clearbtn.show{display:inline-block}
 .clearbtn:hover{background:rgba(255,180,84,.12)}
 
-/* Компактная сетка */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
 .card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;gap:8px;
   background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--pc);
@@ -111,40 +107,25 @@ main{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 26px}
 .card-hint span{transition:transform .2s}
 .card:hover .card-hint span{transform:translateX(3px)}
 
+.details{margin-top:14px;padding-top:12px;border-top:1px solid var(--line2);color:var(--mut);font-size:13px}
+.details .modal-desc{margin-bottom:12px}
+.details .modal-free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:12px;padding:14px;margin-bottom:12px}
+.details .modal-free b{color:var(--teal);display:block;margin-bottom:6px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.details .modal-free p{color:#c9f5ea;font-size:13px;line-height:1.5}
+.details .modal-links{display:flex;gap:12px;flex-wrap:wrap}
+.details .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:600;border-radius:10px;padding:9px 16px;transition:.2s}
+.details .btn .arr{transition:transform .2s;font-size:14px}
+.details .btn:hover .arr{transform:translate(2px,-2px)}
+.details .btn.main{background:color-mix(in srgb,var(--pc) 20%,var(--panel));border:1px solid color-mix(in srgb,var(--pc) 60%,transparent);color:var(--txt)}
+.details .btn.main:hover{background:color-mix(in srgb,var(--pc) 35%,var(--panel));transform:translateY(-2px)}
+.details .btn.ghost{border:1px solid var(--line);color:var(--mut)}
+.details .btn.ghost:hover{border-color:var(--line2);color:var(--txt);transform:translateY(-2px)}
+
 .empty{display:none;text-align:center;padding:70px 20px;border:1px dashed var(--line2);border-radius:16px;color:var(--mut)}
 .empty.show{display:block}
 .empty .big{margin:0 auto 16px;width:54px;height:54px;display:grid;place-items:center;border:1px solid var(--line2);border-radius:14px;background:var(--panel)}
 .empty button{margin-top:18px;background:var(--teal);color:#06251e;border:none;border-radius:9px;padding:10px 22px;font-family:var(--body);font-weight:600;font-size:13.5px;cursor:pointer;transition:.2s}
 .empty button:hover{transform:translateY(-2px);box-shadow:0 8px 22px -8px var(--teal)}
-
-/* Модальное окно */
-.modal-overlay{position:fixed;inset:0;background:rgba(4,8,15,.85);backdrop-filter:blur(8px);z-index:100;
-  display:none;place-items:center;padding:20px;opacity:0;transition:opacity .3s}
-.modal-overlay.active{display:grid;opacity:1}
-.modal-content{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;
-  max-width:640px;width:100%;max-height:90vh;overflow-y:auto;position:relative;
-  transform:scale(.95) translateY(20px);transition:transform .35s cubic-bezier(.2,.9,.3,1.1)}
-.modal-overlay.active .modal-content{transform:none}
-.modal-close{position:absolute;top:16px;right:16px;background:var(--panel2);border:1px solid var(--line);color:var(--mut);
-  width:36px;height:36px;border-radius:10px;display:grid;place-items:center;cursor:pointer;font-size:18px;transition:.2s}
-.modal-close:hover{background:var(--line);color:var(--txt)}
-.modal-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.modal-title{font-family:var(--disp);font-weight:700;font-size:22px;line-height:1.2}
-.modal-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.modal-badges span{font-family:var(--mono);font-size:10.5px;padding:4px 10px;border-radius:6px;border:1px solid var(--line);color:var(--mut)}
-.modal-badges span.hit{color:var(--txt);border-color:var(--teal);background:rgba(53,224,194,.1)}
-.modal-desc{color:var(--mut);font-size:15px;line-height:1.6;margin-bottom:24px}
-.modal-free{background:rgba(53,224,194,.06);border:1px dashed rgba(53,224,194,.4);border-radius:12px;padding:16px;margin-bottom:24px}
-.modal-free b{color:var(--teal);display:block;margin-bottom:6px;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.modal-free p{color:#c9f5ea;font-size:14px;line-height:1.5}
-.modal-links{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13.5px;font-weight:600;border-radius:10px;padding:10px 18px;transition:.2s}
-.btn .arr{transition:transform .2s;font-size:14px}
-.btn:hover .arr{transform:translate(2px,-2px)}
-.btn.main{background:color-mix(in srgb,var(--pc) 20%,var(--panel));border:1px solid color-mix(in srgb,var(--pc) 60%,transparent);color:var(--txt)}
-.btn.main:hover{background:color-mix(in srgb,var(--pc) 35%,var(--panel));transform:translateY(-2px)}
-.btn.ghost{border:1px solid var(--line);color:var(--mut)}
-.btn.ghost:hover{border-color:var(--line2);color:var(--txt);transform:translateY(-2px)}
 
 footer{position:relative;z-index:2;border-top:1px solid var(--line);background:rgba(8,13,24,.85);margin-top:40px}
 .foot-in{max-width:1360px;margin:0 auto;padding:44px 26px 30px;display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:36px}
@@ -176,9 +157,9 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .search kbd{display:none}
   .tb-right{display:none}
   .topbar{padding-top:24px}
-  .grid{grid-template-columns:1fr} /* На мобильных одна колонка для удобства */
-  .modal-content{padding:20px;border-radius:16px}
-  .modal-title{font-size:19px}
+  .grid{grid-template-columns:1fr}
+  .details .modal-links{flex-direction:column}
+  .details .btn{width:100%}
 }
 </style>
 </head>
@@ -206,20 +187,11 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
         <input id="searchInput" type="text" placeholder="Поиск: модель, провайдер, возможность" autocomplete="off">
         <kbd>/</kbd>
       </label>
-      <div class="sort">
-        <span>Сортировка</span>
-        <select id="sortSelect">
-          <option value="pop">по популярности</option>
-          <option value="name">по названию (А-Я)</option>
-          <option value="prov">по провайдеру</option>
-        </select>
-      </div>
       <button class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersBody">
         <span id="filtersLabel">Фильтры</span><span class="cnt" id="filtersCnt">0</span><span class="chev">▼</span>
       </button>
     </div>
     <div class="filters-body" id="filtersBody">
-      <!-- НОВЫЙ ФИЛЬТР ПО ФУНКЦИОНАЛУ -->
       <div class="tb-row">
         <span class="chips-label">Функционал</span>
         <div class="chips" id="funcChips"></div>
@@ -254,14 +226,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
     </div>
   </section>
 </main>
-
-<!-- МОДАЛЬНОЕ ОКНО -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal-content" id="modalContent" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div id="modalBody"></div>
-  </div
-</div>
 
 <footer>
   <div class="foot-in">
@@ -298,12 +262,17 @@ const PC = {
   'Alibaba':'#ff6a00','Cohere':'#395c6b','Microsoft':'#00a4ef','NVIDIA':'#76b900','Perplexity':'#20b8cd'
 };
 const CATS = {
-  chat:{label:'Текст', icon:'💬'}, image:{label:'Изображения', icon:'🎨'},
-  video:{label:'Видео', icon:'🎬'}, audio:{label:'Аудио', icon:'🎧'}, code:{label:'Код', icon:'⌨️'}
+  chat:{label:'Текст'}, 
+  image:{label:'Изображения'},
+  video:{label:'Видео'}, 
+  audio:{label:'Аудио'}
 };
 const FUNC_CATS = {
-  all:{label:'Все', icon:'✨'}, chat:{label:'Текст', icon:'💬'}, image:{label:'Изображения', icon:'🎨'},
-  video:{label:'Видео', icon:'🎬'}, audio:{label:'Аудио', icon:'🎧'}, code:{label:'Код', icon:'⌨️'}
+  all:{label:'Все'},
+  chat:{label:'Текст'}, 
+  image:{label:'Изображения'},
+  video:{label:'Видео'}, 
+  audio:{label:'Аудио'}
 };
 const TAGMETA = {
   ru:{cls:'m-ru', txt:'без VPN'}, vpn:{cls:'m-vpn', txt:'нужен VPN'},
@@ -318,7 +287,7 @@ const GROUPS = [
 const chipColor = t => (t==='ru'||t==='free')?'#57d9a3':(t==='vpn'||t==='limited')?'var(--amber)':t==='local'?'var(--blue)':'var(--mut)';
 
 /* ═══════════ СОСТОЯНИЕ ═══════════ */
-const state = { q:'', func:'all', access:null, pay:null, place:null, sort:'pop' };
+const state = { q:'', func:'all', access:null, pay:null, place:null };
 const $ = s => document.querySelector(s);
 const grid = $('#grid');
 
@@ -337,9 +306,6 @@ function filtered(){
     }
     return true;
     });
-  if(state.sort==='pop') list.sort((a,b)=>b.pop-a.pop);
-  else if(state.sort==='name') list.sort((a,b)=>a.n.localeCompare(b.n,'ru'));
-  else list.sort((a,b)=>a.p.localeCompare(b.p,'ru')||b.pop-a.pop);
   return list;
 }
 
@@ -348,50 +314,33 @@ function activeCount(){ return (state.func!=='all'?1:0) + (state.access?1:0) + (
 /* ═══════════ РЕНДЕР КОМПАКТНЫХ КАРТОЧЕК ═══════════ */
 function cardHTML(m,i){
   const c=CATS[m.c], col=PC[m.p]||'#35e0c2';
-  return `<article class="card" style="--pc:${col};transition-delay:${(i%8)*30}ms" onclick="openModal('${encodeURIComponent(JSON.stringify(m))}')">
+  return `<article class="card" style="--pc:${col};transition-delay:${(i%8)*30}ms" onclick="toggleDetails(this)">
     <div class="card-top">
       <span class="prov"><i></i>${m.p}</span>
-      <span class="cat">${c.icon} ${c.label}</span>
+      <span class="cat">${c.label}</span>
     </div>
     <h3>${m.n}${m.pop>=90?'<span class="hot">ТОП</span>':''}</h3>
     <div class="free-badge">Бесплатный доступ</div>
     <div class="card-hint">Нажмите для деталей <span>→</span></div>
+    <div class="details" style="display:none;">
+      <div class="modal-desc">${m.d || 'Описание отсутствует.'}</div>
+      <div class="modal-free">
+        <b>Условия бесплатного доступа</b>
+        <p>${m.f || 'Доступно бесплатно через агрегатор.'}</p>
+      </div>
+      <div class="modal-links">
+        <a class="btn main" href="${m.u}" target="_blank" rel="noopener">Открыть модель <span class="arr">↗</span></a>
+        ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="arr">↗</span></a>`:''}
+      </div>
+    </div>
   </article>`;
 }
 
-/* ═══════════ МОДАЛЬНОЕ ОКНО ═══════════ */
-function openModal(mEncoded){
-  const m = JSON.parse(decodeURIComponent(mEncoded));
-  const c=CATS[m.c], col=PC[m.p]||'#35e0c2';
-  const badges = m.tags.map(t=>`<span class="${TAGMETA[t].cls}">${TAGMETA[t].txt}</span>`).join('');
-  const ctx = m.ctx ? `<span style="border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--mut)">Контекст: <b style="color:var(--txt)">${m.ctx}</b></span>` : '';
-  
-  $('#modalBody').innerHTML = `
-    <div class="modal-header">
-      <div>
-        <div class="prov" style="font-size:11px;margin-bottom:8px"><i style="background:${col};box-shadow:0 0 6px ${col}"></i>${m.p}</div>
-        <div class="modal-title" style="color:${col}">${m.n}</div>
-        <div class="modal-badges"><span style="border-color:${col};color:${col}">${c.icon} ${c.label}</span>${badges}${ctx ? '<span>'+ctx+'</span>' : ''}</div>
-      </div>
-    </div>
-    <div class="modal-desc">${m.d || 'Описание отсутствует.'}</div>
-    <div class="modal-free">
-      <b>🎁 Условия бесплатного доступа</b>
-      <p>${m.f || 'Доступно бесплатно через агрегатор.'}</p>
-    </div>
-    <div class="modal-links">
-      <a class="btn main" href="${m.u}" target="_blank" rel="noopener" style="--pc:${col}">Открыть модель <span class="arr">↗</span></a>
-      ${m.doc?`<a class="btn ghost" href="${m.doc}" target="_blank" rel="noopener">API и документация <span class="arr">↗</span></a>`:''}
-    </div>
-  `;
-  $('#modalOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
-}
-
-function closeModal(e){
-  if(e && e.target !== e.currentTarget && e.target.className !== 'modal-close') return;
-  $('#modalOverlay').classList.remove('active');
-  document.body.style.overflow = '';
+/* ═══════════ РАЗВОРАЧИВАНИЕ ДЕТАЛЕЙ ═══════════ */
+function toggleDetails(card) {
+  const details = card.querySelector('.details');
+  details.style.display = details.style.display === 'none' ? 'block' : 'none';
+  card.classList.toggle('active');
 }
 
 /* ═══════════ ОТРИСОВКА СЕТКИ И ФИЛЬТРОВ ═══════════ */
@@ -412,7 +361,7 @@ function renderFuncChips(){
   const box=$('#funcChips');
   box.innerHTML = Object.entries(FUNC_CATS).map(([k,v])=>{
     const on = state.func===k ? 'on' : '';
-    return `<button class="chip ${on}" data-group="func" data-tag="${k}" style="--cc:var(--teal)">${v.icon} ${v.label}</button>`;
+    return `<button class="chip ${on}" data-group="func" data-tag="${k}" style="--cc:var(--teal)">${v.label}</button>`;
   }).join('');
   box.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
     state.func = ch.dataset.tag;
@@ -444,7 +393,6 @@ function updateFiltersBadge(){
 /* ═══════════ СОБЫТИЯ ═══════════ */
 let deb;
 $('#searchInput').addEventListener('input',e=>{ clearTimeout(deb); deb=setTimeout(()=>{ state.q=e.target.value; renderGrid(); },130); });
-$('#sortSelect').addEventListener('change',e=>{ state.sort=e.target.value; renderGrid(); });
 $('#filtersToggle').addEventListener('click',()=>{
   const open=$('#toolbar').classList.toggle('open');
   $('#filtersToggle').setAttribute('aria-expanded',open);
@@ -454,12 +402,15 @@ $('#resetBtn').addEventListener('click',resetAll);
 $('#clearBtn').addEventListener('click',resetAll);
 document.addEventListener('keydown',e=>{
   if(e.key==='/' && document.activeElement!==$('#searchInput')){ e.preventDefault(); $('#searchInput').focus(); }
-  if(e.key==='Escape'){ 
-    if($('#modalOverlay').classList.contains('active')) closeModal();
-    else if(document.activeElement===$('#searchInput')) $('#searchInput').blur(); 
-  }
+  if(e.key==='Escape' && document.activeElement===$('#searchInput')){ $('#searchInput').blur(); }
 });
-// Закрытие модалки по клику вне контента уже обработано в onclick HTML
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target === card) {
+      toggleDetails(card);
+    }
+  });
+});
 
 const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io2.unobserve(e.target);} }),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>io2.observe(el));
