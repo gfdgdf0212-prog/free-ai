@@ -2,10 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Актуальный каталог бесплатных нейросетей и AI-моделей: ChatGPT, Gemini, Claude, DeepSeek, Midjourney аналоги. Бесплатный доступ, лимиты и прямые ссылки. Обновлено в 2026 году.">
-<meta name="keywords" content="бесплатные нейросети, free ai, бесплатные нейронки, каталог ии, free ai models, нейросети онлайн бесплатно">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Бесплатные нейросети — каталог Free AI моделей</title>
+<title>НейроРадар — живой реестр бесплатных моделей ИИ</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/cyrillic-500.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/cyrillic-700.css" rel="stylesheet">
@@ -127,12 +125,24 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
 .search{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;transition:.2s}
 .search:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(53,224,194,.14)}
 .search svg{flex:none;stroke:var(--dim)}
-.search input{flex:1;background:none;border:none;outline:none;color:var(--txt);font-family:var(--body);font-size:14.5px}
+.search input{flex:1;background:none;border:none;outline:none;color:var(--txt);font-family:var(--body);font-size:14.5px;min-width:0}
 .search input::placeholder{color:var(--dim)}
 .search kbd{font-family:var(--mono);font-size:10px;color:var(--dim);border:1px solid var(--line2);border-radius:4px;padding:2px 6px}
 .sort{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
 .sort select{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:var(--body);font-size:13.5px;cursor:pointer;outline:none;transition:.2s}
 .sort select:hover{border-color:var(--line2)}
+/* кнопка «Фильтры» — видна только на мобильных */
+.filters-toggle{display:none;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);color:var(--mut);
+  border-radius:10px;padding:10px 14px;font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;transition:.2s;white-space:nowrap}
+.filters-toggle:hover{border-color:var(--teal);color:var(--txt)}
+.filters-toggle .cnt{display:none;font-family:var(--mono);font-size:10px;font-weight:700;background:var(--teal);color:#04231c;border-radius:5px;padding:2px 7px}
+.filters-toggle .cnt.show{display:inline-block}
+.filters-toggle .chev{transition:transform .3s;font-size:10px;color:var(--dim)}
+.toolbar.open .filters-toggle{border-color:var(--teal);color:var(--txt)}
+.toolbar.open .filters-toggle .chev{transform:rotate(180deg);color:var(--teal)}
+/* обёртка блоков фильтров: на десктопе «прозрачна» для флекса тулбара */
+.filters-body{display:contents}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-8px)}}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line);color:var(--mut);
   border-radius:999px;padding:6px 14px;font-family:var(--body);font-size:12.5px;font-weight:500;cursor:pointer;transition:.18s;user-select:none}
@@ -149,7 +159,7 @@ h1 em::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;b
 .updated{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
 .updated b{color:var(--amber)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(325px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:16px}
 .card{--pc:var(--teal);position:relative;display:flex;flex-direction:column;gap:11px;
   background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--pc);
   border-radius:14px;padding:18px 18px 13px;opacity:0;transform:translateY(16px);
@@ -249,6 +259,20 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .mh-right{order:-1}
   .radar{width:min(240px,64vw)}
 }
+/* ── мобильная адаптация тулбара: фильтры сворачиваются, чипы в одну прокручиваемую строку ── */
+@media (max-width:860px){
+  .filters-toggle{display:inline-flex}
+  .filters-body{display:none}
+  .toolbar.open .filters-body{display:flex;flex-direction:column;gap:12px;animation:fadeDown .3s ease}
+  .chips{flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;padding:2px 2px 4px;
+    mask-image:linear-gradient(90deg,#000 94%,transparent)}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .chips-label{min-width:auto;flex:none}
+  .sort{width:100%;justify-content:space-between}
+  .sort select{flex:1}
+}
 @media (max-width:640px){
   main{padding:0 16px}
   .statusbar{padding:8px 16px}
@@ -257,7 +281,13 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   .stat{min-width:0;flex:1;padding:13px 14px}
   .stats{width:100%}
   .foot-in{grid-template-columns:1fr;gap:26px}
-  .chips-label{min-width:100%}
+  .search kbd{display:none}
+}
+@media (max-width:480px){
+  .stats{display:grid;grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+  .lede{font-size:15px}
 }
 </style>
 </head>
@@ -287,7 +317,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
     <div class="mh-left reveal">
       <div class="brand">
         <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#35e0c2" stroke-width="1.6"/><circle cx="16" cy="16" r="8" stroke="#35e0c2" stroke-width="1.2" opacity=".55"/><path d="M16 16 L27 8" stroke="#ffb454" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.4" fill="#35e0c2"/><circle cx="10" cy="21" r="1.7" fill="#ffb454"/></svg>
-        НЕЙРО<b>РАДАР</b> · v2.6
+        НЕЙРО<b>РАДАР</b> · v2.7
       </div>
       <p class="eyebrow">● онлайн-мониторинг · воскресенье, 26 июля 2026</p>
       <h1>Бесплатные модели <em>нейросетей</em> — на одном радаре</h1>
@@ -319,7 +349,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
   <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
 
   <!-- тулбар -->
-  <section class="toolbar reveal">
+  <section class="toolbar reveal" id="toolbar">
     <div class="tb-row">
       <label class="search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -334,14 +364,19 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
           <option value="prov">по провайдеру</option>
         </select>
       </div>
+      <button class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersBody">
+        <span>⚙</span><span id="filtersLabel">Фильтры</span><span class="cnt" id="filtersCnt">0</span><span class="chev">▼</span>
+      </button>
     </div>
-    <div class="tb-row">
-      <span class="chips-label">Категория</span>
-      <div class="chips" id="catChips"></div>
-    </div>
-    <div class="tb-row">
-      <span class="chips-label">Провайдер</span>
-      <div class="chips" id="provChips"></div>
+    <div class="filters-body" id="filtersBody">
+      <div class="tb-row">
+        <span class="chips-label">Категория</span>
+        <div class="chips" id="catChips"></div>
+      </div>
+      <div class="tb-row">
+        <span class="chips-label">Провайдер</span>
+        <div class="chips" id="provChips"></div>
+      </div>
     </div>
   </section>
 
@@ -476,6 +511,7 @@ let checksToday = 131;
 
 const $ = s => document.querySelector(s);
 const grid = $('#grid');
+const isMobile = () => window.matchMedia('(max-width:860px)').matches;
 
 /* ═══════════ РЕНДЕР КАРТОЧЕК ═══════════ */
 function plural(n){ const a=Math.abs(n)%100,b=a%10; if(a>10&&a<20)return'моделей'; if(b>1&&b<5)return'модели'; if(b===1)return'модель'; return'моделей'; }
@@ -529,7 +565,22 @@ function renderGrid(){
   $('#resultCount').textContent = list.length;
   $('#resultWord').textContent = plural(list.length);
   $('#emptyState').classList.toggle('show', list.length===0);
+  updateFiltersBadge();
 }
+
+/* ═══════════ МОБИЛЬНЫЕ ФИЛЬТРЫ ═══════════ */
+function updateFiltersBadge(){
+  let n = (state.cat!=='all' ? 1 : 0) + state.provs.size;
+  const c = $('#filtersCnt');
+  c.textContent = n;
+  c.classList.toggle('show', n>0);
+  $('#filtersLabel').textContent = n>0 ? `Фильтры · активно: ${n}` : 'Фильтры';
+}
+$('#filtersToggle').addEventListener('click',()=>{
+  const tb = $('#toolbar');
+  const open = tb.classList.toggle('open');
+  $('#filtersToggle').setAttribute('aria-expanded', open);
+});
 
 /* ═══════════ ЧИПЫ ═══════════ */
 function renderCatChips(){
@@ -566,7 +617,11 @@ function renderLeaderboard(){
     const p=r.dataset.prov;
     state.provs = (state.provs.size===1&&state.provs.has(p)) ? new Set() : new Set([p]);
     renderProvChips(); renderGrid();
-    window.scrollTo({top:$('.toolbar').offsetTop-10,behavior:'smooth'});
+    if(isMobile()){
+      $('#toolbar').classList.add('open');
+      $('#filtersToggle').setAttribute('aria-expanded','true');
+    }
+    window.scrollTo({top:$('#toolbar').offsetTop-10,behavior:'smooth'});
   });
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     box.querySelectorAll('.lb-bar b').forEach(b=>b.style.width=b.dataset.w+'%');
