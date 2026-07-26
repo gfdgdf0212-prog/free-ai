@@ -1,291 +1,99 @@
 [
   {
-    "n": "Ling-3.0-flash (free)",
-    "p": "Inclusionai",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/inclusionai/ling-3.0-flash:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Poolside: Laguna S 2.1 (free)",
-    "p": "Poolside",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "Laguna S 2.1 is the latest coding agent model from [Poolside](<https://poolside.ai/>). Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on T...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/poolside/laguna-s-2.1:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Poolside: Laguna XS 2.1 (free)",
-    "p": "Poolside",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from [Poolside](https://poolside.ai/) and a step forward from their Laguna XS.2 model (released in April 2...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/poolside/laguna-xs-2.1:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Cohere: North Mini Code (free)",
-    "p": "Cohere",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "256000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimi...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/cohere/north-mini-code:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron 3.5 Content Safety (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "128000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-3.5-content-safety:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron 3 Ultra (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "1000000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamb...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-3-ultra-550b-a55b:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron 3 Nano Omni (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "256000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA Nemotron™ 3 Nano Omni is a 30B-A3B open multimodal model designed to function as a perception and context sub-agent in enterprise agent systems. It accepts text, image, v...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Poolside: Laguna M.1 (free)",
-    "p": "Poolside",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "Laguna M.1 is the flagship coding agent model from [Poolside](https://poolside.ai/), optimized for complex software engineering tasks. Designed for agentic coding workflows, it ...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/poolside/laguna-m.1:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Google: Gemma 4 26B A4B  (free)",
-    "p": "Google",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — d...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/google/gemma-4-26b-a4b-it:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Google: Gemma 4 31B (free)",
-    "p": "Google",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable think...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/google/gemma-4-31b-it:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Google: Lyria 3 Pro Preview",
-    "p": "Google",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "1048576",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "Full-length songs are priced at $0.08 per song. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-qual...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/google/lyria-3-pro-preview",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Google: Lyria 3 Clip Preview",
-    "p": "Google",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "1048576",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "30 second duration clips are priced at $0.04 per clip. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/google/lyria-3-clip-preview",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron 3 Super (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "262144",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-3-super-120b-a12b:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "Free Models Router",
-    "p": "OpenRouter",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "200000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for mo...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/openrouter/free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "256000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fu...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-3-nano-30b-a3b:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "128000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transforme...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-nano-12b-v2-vl:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "NVIDIA: Nemotron Nano 9B V2 (free)",
-    "p": "NVIDIA",
-    "c": "chat",
-    "pop": 50,
-    "ctx": "128000",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It respond...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/nvidia/nemotron-nano-9b-v2:free",
-    "doc": "https://openrouter.ai/docs"
-  },
-  {
-    "n": "OpenAI: gpt-oss-20b (free)",
+    "n": "GPT-5.5 Instant",
     "p": "OpenAI",
     "c": "chat",
-    "pop": 50,
-    "ctx": "131072",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
-    "d": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters pe...",
-    "f": "Бесплатно через OpenRouter (без привязки карты)",
-    "u": "https://openrouter.ai/models/openai/gpt-oss-20b:free",
-    "doc": "https://openrouter.ai/docs"
+    "pop": 100,
+    "ctx": "400K",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Флагман OpenAI: рассуждение, зрение и голос. Лимит сообщений в 5-часовом окне, далее переход на GPT-5 mini.",
+    "f": "Free-тариф ChatGPT: около 10 сообщений GPT-5.5 каждые 5 часов",
+    "u": "https://chatgpt.com",
+    "doc": "https://platform.openai.com/docs"
+  },
+  {
+    "n": "Claude Sonnet 4.5",
+    "p": "Anthropic",
+    "c": "chat",
+    "pop": 97,
+    "ctx": "200K",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Топовая модель Anthropic для сложного рассуждения, агентов и кода. Одна из лучших в программировании.",
+    "f": "Бесплатно на claude.ai — лимит сообщений, обновляется раз в несколько часов",
+    "u": "https://claude.ai",
+    "doc": "https://docs.anthropic.com"
+  },
+  {
+    "n": "Gemini 3 Pro",
+    "p": "Google",
+    "c": "chat",
+    "pop": 95,
+    "ctx": "1M",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Флагман Google: мультимодальность, глубокое рассуждение Deep Think, нативная работа с аудио и видео.",
+    "f": "Ограниченный бесплатный доступ в приложении Gemini",
+    "u": "https://gemini.google.com",
+    "doc": "https://ai.google.dev/gemini-api/docs"
+  },
+  {
+    "n": "DeepSeek-V3.1",
+    "p": "DeepSeek",
+    "c": "chat",
+    "pop": 94,
+    "ctx": "128K",
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Гибридная модель: обычный режим и режим рассуждения. Сильна в коде и математике.",
+    "f": "chat.deepseek.com — бесплатно без жёстких лимитов; веса открыты",
+    "u": "https://chat.deepseek.com",
+    "doc": "https://platform.deepseek.com"
+  },
+  {
+    "n": "Gemini 2.5 Flash",
+    "p": "Google",
+    "c": "chat",
+    "pop": 93,
+    "ctx": "1M",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Лучший баланс скорости и качества. Мультимодальная, с мышлением — и с щедрым бесплатным API.",
+    "f": "AI Studio: бесплатный API, около 1500 запросов в день без карты",
+    "u": "https://aistudio.google.com",
+    "doc": "https://ai.google.dev/gemini-api/docs/pricing"
+  },
+  {
+    "n": "DeepSeek-R1",
+    "p": "DeepSeek",
+    "c": "chat",
+    "pop": 91,
+    "ctx": "128K",
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Открытая думающая модель уровня o1: пошаговое рассуждение для математики, логики и кода.",
+    "f": "Бесплатно в чате DeepSeek, веса открыты для локального запуска",
+    "u": "https://chat.deepseek.com",
+    "doc": "https://platform.deepseek.com"
+  },
+  {
+    "n": "Gemini 2.5 Pro",
+    "p": "Google",
+    "c": "chat",
+    "pop": 90,
+    "ctx": "1M",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Флагман 2.5-серии: миллион токенов контекста, глубокий анализ документов и кодовых баз.",
+    "f": "Бесплатный тариф в AI Studio с лимитом RPM",
+    "u": "https://aistudio.google.com",
+    "doc": "https://ai.google.dev/gemini-api/docs/models"
+  },
+  {
+    "n": "GPT-5 mini",
+    "p": "OpenAI",
+    "c": "chat",
+    "pop": 88,
+    "ctx": "400K",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Компактная и быстрая версия GPT-5 для повседневных задач: тексты, конспекты, простой код.",
+    "f": "Бесплатно в ChatGPT — подхватывается после лимита флагмана",
+    "u": "https://chatgpt.com",
+    "doc": "https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq"
   },
   {
     "n": "Kimi K2 (free)",
@@ -293,14 +101,386 @@
     "c": "chat",
     "pop": 88,
     "ctx": "128K",
-    "tags": [
-      "ru",
-      "limited",
-      "online"
-    ],
+    "tags": ["ru", "free", "online"],
     "d": "Открытая MoE-модель Moonshot AI: 1 трлн параметров, 32B активных. Сильна в программировании, агентных задачах и работе с инструментами, хорошо держит длинный контекст.",
     "f": "Бесплатно через OpenRouter (moonshotai/kimi-k2:free) — без привязки карты, с дневными лимитами",
     "u": "https://openrouter.ai/models/moonshotai/kimi-k2:free",
     "doc": "https://openrouter.ai/docs"
+  },
+  {
+    "n": "Llama 3.3 70B",
+    "p": "Groq",
+    "c": "chat",
+    "pop": 87,
+    "ctx": "128K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Открытая Llama 3.3 на чипах Groq LPU — один из самых быстрых инференсов: сотни токенов в секунду.",
+    "f": "Бесплатный API Groq: щедрые дневные лимиты, без карты",
+    "u": "https://console.groq.com",
+    "doc": "https://console.groq.com/docs/models"
+  },
+  {
+    "n": "Llama 4 Maverick",
+    "p": "Meta",
+    "c": "chat",
+    "pop": 86,
+    "ctx": "1M",
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Открытая MoE-модель Meta: 400B параметров, 17B активных, мультимодальность. Уровень GPT-4o.",
+    "f": "Бесплатно в Meta AI и открытые веса для локального запуска",
+    "u": "https://www.meta.ai",
+    "doc": "https://llama.com"
+  },
+  {
+    "n": "GitHub Copilot Free",
+    "p": "GitHub",
+    "c": "chat",
+    "pop": 85,
+    "tags": ["ru", "limited", "online"],
+    "d": "Автодополнение кода и чат прямо в VS Code, JetBrains и на GitHub.com. Модели GPT и Claude на выбор, читает всю кодовую базу.",
+    "f": "2000 дополнений и 50 чат-сообщений в месяц бесплатно, без карты",
+    "u": "https://github.com/features/copilot",
+    "doc": "https://docs.github.com/copilot"
+  },
+  {
+    "n": "Veo 3.1 Fast",
+    "p": "Google",
+    "c": "video",
+    "pop": 84,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Видеогенератор Google со встроенным звуком: диалоги, эффекты, физика. Версия Fast — на бесплатном тарифе.",
+    "f": "Лимитированные бесплатные генерации в приложении Gemini",
+    "u": "https://gemini.google.com",
+    "doc": "https://deepmind.google/models/veo/"
+  },
+  {
+    "n": "FLUX.1 Schnell",
+    "p": "Black Forest Labs",
+    "c": "image",
+    "pop": 83,
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Быстрая открытая модель изображений от экс-команды Stable Diffusion: картинка за 4 шага генерации.",
+    "f": "Открытые веса — бесплатно локально; онлайн — на HF Spaces и Cloudflare",
+    "u": "https://bfl.ai",
+    "doc": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+  },
+  {
+    "n": "Grok 4",
+    "p": "xAI",
+    "c": "chat",
+    "pop": 83,
+    "ctx": "256K",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Флагман xAI: мощное рассуждение и доступ к данным соцсети X в реальном времени.",
+    "f": "Бесплатно в X и на grok.com с лимитом сообщений",
+    "u": "https://grok.com",
+    "doc": "https://docs.x.ai"
+  },
+  {
+    "n": "Gemini 2.5 Flash-Lite",
+    "p": "Google",
+    "c": "chat",
+    "pop": 82,
+    "ctx": "1M",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Самая быстрая в линейке: для высокообъёмных задач — классификация, извлечение, массовые запросы.",
+    "f": "Самый щедрый бесплатный тариф в линейке Gemini",
+    "u": "https://aistudio.google.com",
+    "doc": "https://ai.google.dev/gemini-api/docs/pricing"
+  },
+  {
+    "n": "ElevenLabs",
+    "p": "ElevenLabs",
+    "c": "audio",
+    "pop": 82,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Эталонный синтез речи: 32 языка, клонирование голоса, дубляж и звуковые эффекты по тексту.",
+    "f": "10000 символов в месяц, 3 своих голоса — бесплатно",
+    "u": "https://elevenlabs.io"
+  },
+  {
+    "n": "DeepSeek-R1 (free)",
+    "p": "OpenRouter",
+    "c": "chat",
+    "pop": 81,
+    "ctx": "128K",
+    "tags": ["ru", "limited", "online"],
+    "d": "R1 по нулевой цене: OpenRouter субсидирует инференс популярных открытых моделей. Идеально для старта.",
+    "f": "20 запросов в минуту, до 1000 запросов в день — без карты",
+    "u": "https://openrouter.ai/models?max_price=0",
+    "doc": "https://openrouter.ai/collections/free-models"
+  },
+  {
+    "n": "YandexGPT 5.1 Pro",
+    "p": "Яндекс",
+    "c": "chat",
+    "pop": 80,
+    "ctx": "32K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Одна из лучших моделей для русского языка: ответы, саммари, деловые тексты. Живёт в Алисе.",
+    "f": "Бесплатно в Алисе и на ya.ru/ai; в Yandex Cloud — пробный грант",
+    "u": "https://ya.ru/ai/gpt",
+    "doc": "https://yandex.cloud/ru/services/yandexgpt"
+  },
+  {
+    "n": "Suno",
+    "p": "Suno",
+    "c": "audio",
+    "pop": 80,
+    "tags": ["ru", "limited", "online"],
+    "d": "Полноценные треки с вокалом по текстовому описанию — от идеи до готовой песни за минуту.",
+    "f": "50 кредитов ежедневно — около 10 треков",
+    "u": "https://suno.com"
+  },
+  {
+    "n": "Kling 2.1",
+    "p": "Kuaishou",
+    "c": "video",
+    "pop": 79,
+    "tags": ["ru", "limited", "online"],
+    "d": "Один из сильнейших видеогенераторов: реалистичная физика, движение камеры, клипы до 10 секунд.",
+    "f": "Ежедневные бесплатные кредиты — около 6 видео",
+    "u": "https://klingai.com"
+  },
+  {
+    "n": "Mistral Small 3.1",
+    "p": "Mistral",
+    "c": "chat",
+    "pop": 78,
+    "ctx": "128K",
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Европейская альтернатива гигантам: 24B параметров, мультимодальность, отличная скорость.",
+    "f": "Le Chat бесплатно; веса открыты для локального запуска",
+    "u": "https://chat.mistral.ai",
+    "doc": "https://docs.mistral.ai"
+  },
+  {
+    "n": "Stable Diffusion 3.5 Large",
+    "p": "Stability AI",
+    "c": "image",
+    "pop": 78,
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Открытая классика генерации изображений: полный контроль, LoRA, ControlNet и никакого цензурного API.",
+    "f": "Открытые веса — бесплатно локально и на Hugging Face",
+    "u": "https://stability.ai",
+    "doc": "https://huggingface.co/stabilityai/Stable-Diffusion-3.5-Large"
+  },
+  {
+    "n": "Ideogram 3",
+    "p": "Ideogram",
+    "c": "image",
+    "pop": 77,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Лучший рендер текста внутри изображений: постеры, логотипы, типографика без искажений.",
+    "f": "Ежедневные бесплатные генерации без карты",
+    "u": "https://ideogram.ai"
+  },
+  {
+    "n": "Qwen3 235B (free)",
+    "p": "Alibaba",
+    "c": "chat",
+    "pop": 77,
+    "ctx": "128K",
+    "tags": ["ru", "free", "online"],
+    "d": "Открытый MoE-флагман Alibaba: 235B параметров, 119 языков, гибридное мышление. Бесплатно через OpenRouter.",
+    "f": "Бесплатно через OpenRouter — без привязки карты и без VPN",
+    "u": "https://openrouter.ai/models?max_price=0",
+    "doc": "https://openrouter.ai/collections/free-models"
+  },
+  {
+    "n": "Cursor",
+    "p": "Cursor",
+    "c": "chat",
+    "pop": 76,
+    "tags": ["ru", "limited", "online"],
+    "d": "Самый популярный AI-редактор на базе VS Code: Tab-дополнение, агентский режим и мультифайловое редактирование кодовой базы.",
+    "f": "Free-тариф: 2000 дополнений и ограниченный агентский режим в месяц",
+    "u": "https://cursor.com"
+  },
+  {
+    "n": "GigaChat 2",
+    "p": "Сбер",
+    "c": "chat",
+    "pop": 76,
+    "ctx": "8K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Флагман Сбера: силён в русском, генерирует картинки и работает с документами.",
+    "f": "Бесплатный тариф в веб-чате giga.chat и API для разработчиков",
+    "u": "https://giga.chat",
+    "doc": "https://developers.sber.ru/gigachat"
+  },
+  {
+    "n": "Llama 3.3 70B (free)",
+    "p": "OpenRouter",
+    "c": "chat",
+    "pop": 75,
+    "ctx": "128K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Открытый флагман Meta через единый API OpenRouter — бесплатно и с OpenAI-совместимым интерфейсом.",
+    "f": "Бесплатный тариф OpenRouter: без оплаты и карты",
+    "u": "https://openrouter.ai/models?max_price=0",
+    "doc": "https://openrouter.ai/collections/free-models"
+  },
+  {
+    "n": "Luma Dream Machine",
+    "p": "Luma",
+    "c": "video",
+    "pop": 74,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Кинематографичные 5-секундные ролики из текста и картинок, режимы Loop и Extend.",
+    "f": "Несколько бесплатных генераций в месяц",
+    "u": "https://lumalabs.ai/dream-machine"
+  },
+  {
+    "n": "Whisper Large V3",
+    "p": "Groq",
+    "c": "audio",
+    "pop": 74,
+    "tags": ["ru", "limited", "online"],
+    "d": "Лучшее открытое распознавание речи: 99 языков, транскрипция и перевод почти в реальном времени.",
+    "f": "Бесплатная транскрипция через API Groq",
+    "u": "https://console.groq.com",
+    "doc": "https://console.groq.com/docs/models"
+  },
+  {
+    "n": "Leonardo AI",
+    "p": "Leonardo AI",
+    "c": "image",
+    "pop": 73,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Комбайн для креаторов: десятки стилей, realtime-холст, апскейл и консистентные персонажи.",
+    "f": "150 токенов ежедневно — примерно 30 изображений",
+    "u": "https://leonardo.ai"
+  },
+  {
+    "n": "Llama 3.3 70B",
+    "p": "Cloudflare",
+    "c": "chat",
+    "pop": 73,
+    "ctx": "128K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Бесплатный инференс Llama 3.3 на edge-сети Cloudflare — без биллинга и привязки карты.",
+    "f": "Workers AI: бесплатный тариф по нейронным запросам в день",
+    "u": "https://developers.cloudflare.com/workers-ai",
+    "doc": "https://developers.cloudflare.com/workers-ai/models/"
+  },
+  {
+    "n": "Windsurf",
+    "p": "Windsurf",
+    "c": "chat",
+    "pop": 73,
+    "tags": ["ru", "limited", "online"],
+    "d": "AI-редактор с агентом Cascade: сам читает кодовую базу, правит файлы и запускает команды в терминале.",
+    "f": "Бесплатный тариф с месячным лимитом кредитов Cascade",
+    "u": "https://windsurf.com"
+  },
+  {
+    "n": "Llama 3.3 70B",
+    "p": "Cerebras",
+    "c": "chat",
+    "pop": 72,
+    "ctx": "128K",
+    "tags": ["vpn", "limited", "online"],
+    "d": "Llama 3.3 на wafer-scale процессоре Cerebras: до 2100 токенов в секунду — быстрее GPU-кластера.",
+    "f": "Бесплатный тариф в Cerebras Cloud",
+    "u": "https://cloud.cerebras.ai",
+    "doc": "https://inference-docs.cerebras.ai"
+  },
+  {
+    "n": "Hailuo 02",
+    "p": "MiniMax",
+    "c": "video",
+    "pop": 72,
+    "tags": ["ru", "limited", "online"],
+    "d": "Видеомодель MiniMax: выразительная динамика и стабильные персонажи, сильна в аниме-стилистике.",
+    "f": "Ежедневные бесплатные кредиты",
+    "u": "https://hailuoai.video"
+  },
+  {
+    "n": "FLUX.1 Schnell",
+    "p": "Cloudflare",
+    "c": "image",
+    "pop": 71,
+    "tags": ["ru", "limited", "online"],
+    "d": "Генерация изображений моделью FLUX через бесплатный API Workers AI — одна команда, и картинка готова.",
+    "f": "Бесплатные генерации в рамках тарифа Workers AI",
+    "u": "https://developers.cloudflare.com/workers-ai",
+    "doc": "https://developers.cloudflare.com/workers-ai/models/"
+  },
+  {
+    "n": "Free Inference Hub",
+    "p": "Hugging Face",
+    "c": "chat",
+    "pop": 70,
+    "tags": ["ru", "limited", "online"],
+    "d": "Бесплатный API-инференс сотен открытых моделей — Llama, Qwen, DeepSeek, Gemma — прямо из карточек на HF.",
+    "f": "Inference Providers: бесплатный тариф для всех зарегистрированных",
+    "u": "https://huggingface.co/models?inference=free",
+    "doc": "https://huggingface.co/docs/inference-providers"
+  },
+  {
+    "n": "Runway Gen-4",
+    "p": "Runway",
+    "c": "video",
+    "pop": 70,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Профессиональный инструмент кинематографистов: консистентные герои, точный контроль сцены.",
+    "f": "Стартовые бесплатные кредиты при регистрации",
+    "u": "https://runwayml.com"
+  },
+  {
+    "n": "Krea AI",
+    "p": "Krea",
+    "c": "image",
+    "pop": 69,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Realtime-генерация по принципу рисуешь и получаешь, апскейл и улучшение фото в одном холсте.",
+    "f": "Бесплатный тариф с ежедневным лимитом генераций",
+    "u": "https://krea.ai"
+  },
+  {
+    "n": "Llama 3.1 8B Instant",
+    "p": "Groq",
+    "c": "chat",
+    "pop": 68,
+    "ctx": "128K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Лёгкая молниеносная модель для чат-ботов, классификации и извлечения на больших потоках.",
+    "f": "Бесплатный API Groq",
+    "u": "https://console.groq.com",
+    "doc": "https://console.groq.com/docs/models"
+  },
+  {
+    "n": "Kandinsky 3.1",
+    "p": "Сбер",
+    "c": "image",
+    "pop": 67,
+    "tags": ["ru", "free", "local", "online"],
+    "d": "Открытая модель изображений Сбера: 37 стилей, отличное понимание запросов на русском.",
+    "f": "Бесплатно на FusionBrain; веса открыты для локального запуска",
+    "u": "https://fusionbrain.ai",
+    "doc": "https://huggingface.co/kandinsky-community"
+  },
+  {
+    "n": "Pika 2.2",
+    "p": "Pika",
+    "c": "video",
+    "pop": 66,
+    "tags": ["vpn", "limited", "online"],
+    "d": "Лёгкий видеогенератор: Pikaframes, апскейл и спецэффекты Scene Ingredients.",
+    "f": "Ежедневные бесплатные кредиты",
+    "u": "https://pika.art"
+  },
+  {
+    "n": "Gemma 3 27B (free)",
+    "p": "OpenRouter",
+    "c": "chat",
+    "pop": 66,
+    "ctx": "128K",
+    "tags": ["ru", "limited", "online"],
+    "d": "Открытая модель Google для исследований: мультимодальная, компактная и быстрая. Бесплатно через OpenRouter.",
+    "f": "Бесплатный тариф OpenRouter: без оплаты и карты",
+    "u": "https://openrouter.ai/models?max_price=0",
+    "doc": "https://openrouter.ai/collections/free-models"
   }
 ]
